@@ -1,0 +1,32 @@
+.header {
+  width: 100%;
+  padding: @header-padding-top 0 0 0 !important;
+  background-color: @primary;
+  color: #ffffff !important;
+  .no-repeat {
+    background-repeat: no-repeat;
+  }
+  .full-width {
+    background-size: 100% auto;
+  }
+  .full-height {
+    background-size: auto 100%;
+  }
+
+  #avatar {
+    border: 5px solid #ffffff;
+  }
+}
+
+@media (min-width: @screen-md-min) {
+  .header {
+    min-height: @header-category-height - @header-padding-top;
+  }
+
+  #content {
+    margin-top: -325px;
+  }
+
+}
+
+
