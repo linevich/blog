@@ -58,33 +58,10 @@
     {# Twitter Cards tags #}
     {% include 'includes/twitter_cards.html' %}
 
-    <!-- Bootstrap -->
-    {% if BOOTSTRAP_THEME %}
-        <link rel="stylesheet" href="{{ MAIN_SITEURL }}/theme/css/bootstrap.{{ BOOTSTRAP_THEME }}.min.css"
-              type="text/css"/>
-    {% else %}
-        <link rel="stylesheet" href="{{ MAIN_SITEURL }}/theme/css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="{{ MAIN_SITEURL }}/theme/css/style.css" type="text/css"/>
     {% endif %}
-    <link href="{{ MAIN_SITEURL }}/theme/css/font-awesome.min.css" rel="stylesheet">
 
     <link href="{{ MAIN_SITEURL }}/theme/css/pygments/{{ PYGMENTS_STYLE|default('native') }}.css" rel="stylesheet">
-    {% if 'tipue_search' in PLUGINS %}
-        <link href="{{ SITEURL }}/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
-    {% endif %}
-    {% if DOCUTIL_CSS %}
-        <link href="{{ MAIN_SITEURL }}/theme/css/html4css1.css" rel="stylesheet">
-    {% endif %}
-    {% if TYPOGRIFY %}
-        <link href="{{ MAIN_SITEURL }}/theme/css/typogrify.css" rel="stylesheet">
-    {% endif %}
-    <link rel="stylesheet" href="{{ MAIN_SITEURL }}/theme/css/style.css" type="text/css"/>
-    {% if CUSTOM_CSS %}
-        <link href="{{ MAIN_SITEURL }}/{{ CUSTOM_CSS }}" rel="stylesheet">
-    {% endif %}
-    {% if SHARIFF %}
-        <link href="{{ MAIN_SITEURL }}/theme/css/shariff/shariff.min.css" rel="stylesheet">
-    {% endif %}
-
     {% if FEED_ALL_ATOM %}
         <link href="{{ MAIN_SITEURL }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate"
               title="{{ SITENAME }} ATOM Feed"/>
@@ -100,8 +77,7 @@
 </head>
 <body>
 
-<div class="navbar {% if BOOTSTRAP_NAVBAR_INVERSE %}navbar-inverse{% else %}navbar-default{% endif %} navbar-fixed-top"
-     role="navigation">
+<div class="navbar navbar-default navbar-static-top" role="navigation">
     <div class="container{% if BOOTSTRAP_FLUID %}-fluid{% endif %}">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -137,54 +113,31 @@
                 {% endif %}
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                {% if 'tipue_search' in PLUGINS %}
-                    <li><span>
-                <form class="navbar-search" action="/search">
-                    <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"
-                           required>
-                </form></span>
-                    </li>
-                {% endif %}
                 <li><a href="{{ MAIN_SITEURL }}/{{ ARCHIVES_URL | default('archives.html') }}"><i
-                        class="fa fa-th-list"></i><span class="icon-label">{% trans %}Архіви{% endtrans %}</span></a></li>
+                        class="fa fa-th-list"></i><span class="icon-label">{% trans %}Архіви{% endtrans %}</span></a>
+                </li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
     </div>
 </div> <!-- /.navbar -->
-<!-- Banner -->
-{% if BANNER and BANNER_ALL_PAGES %}
-    {% include 'includes/banner.html' %}
-{% elif BANNER and not BANNER_ALL_PAGES %}
-    {% block banner %}{% endblock %}
-{% endif %}
-<!-- End Banner -->
 {% block header %}
 {% endblock %}
-<div class="container{% if BOOTSTRAP_FLUID %}-fluid{% endif %}">
+<div class="container">
     <div class="row">
         {% block content %}
         {% endblock %}
     </div>
 </div>
+
 {% include 'includes/footer.html' %}
-
-<script src="{{ MAIN_SITEURL }}/theme/js/jquery.min.js"></script>
-
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="{{ MAIN_SITEURL }}/theme/js/bootstrap.min.js"></script>
-
-<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="{{ MAIN_SITEURL }}/theme/js/respond.min.js"></script>
-
-{% if BANNER %}
-    <script src="{{ MAIN_SITEURL }}/theme/js/bodypadding.js"></script>
-{% endif %}
 {% include 'includes/github-js.html' %}
 {% include 'includes/disqus_script.html' %}
 {% include 'includes/ga.html' %}
 {% include 'includes/piwik.html' %}
 
 {% block scripts %}{% endblock %}
+
+<script src="{{ MAIN_SITEURL }}/js/main.js"></script>
 </body>
 </html>
