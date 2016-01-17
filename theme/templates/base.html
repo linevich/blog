@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="{% block html_lang %}{{ DEFAULT_LANG }}{% endblock %}"
-      {% if USE_OPEN_GRAPH %}
+        {% if USE_OPEN_GRAPH %}
       xmlns:og="http://ogp.me/ns#"
       xmlns:fb="https://www.facebook.com/2008/fbml" {% endif %}>
 <head>
@@ -11,48 +11,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     {% if 'liquid_tags.notebook' in PLUGINS %}
-    {% include 'includes/liquid_tags_nb_header.html' %}
+        {% include 'includes/liquid_tags_nb_header.html' %}
     {% endif %}
 
     {# Favicons are a touchy subject. For reasoning for the following code, see:
     http://stackoverflow.com/a/23851464/872397 #}
     {% if FAVICON %}
-    <link href="{{ MAIN_SITEURL }}/{{ FAVICON }}" rel="icon">
+        <link href="{{ MAIN_SITEURL }}/{{ FAVICON }}" rel="icon">
     {% endif %}
     {% if FAVICON_IE %}
-    <!--[if IE]>
+        <!--[if IE]>
     <link rel="shortcut icon" href="{{ MAIN_SITEURL }}/{{ FAVICON_IE }}"><![endif]-->
     {% endif %}
     {% if TOUCHICON %}
-    <link rel="apple-touch-icon" href="{{ MAIN_SITEURL }}/{{ TOUCHICON }}">
+        <link rel="apple-touch-icon" href="{{ MAIN_SITEURL }}/{{ TOUCHICON }}">
     {% endif %}
 
     {% block canonical_rel %}{% endblock %}
 
     {% block meta %}
-    <meta name="author" content="{{ AUTHOR }}"/>
+        <meta name="author" content="{{ AUTHOR }}"/>
     {% endblock %}
 
     {# Open Graph tags #}
     {% if USE_OPEN_GRAPH is not defined %}
-    {% set USE_OPEN_GRAPH = True %}
+        {% set USE_OPEN_GRAPH = True %}
     {% endif %}
     {% if USE_OPEN_GRAPH %}
-    {% block opengraph %}
-    <!-- Open Graph tags -->
-    {% if OPEN_GRAPH_FB_APP_ID %}
-    <meta property="fb:app_id" content="{{ OPEN_GRAPH_FB_APP_ID }}"/>
-    {% endif %}
-    <meta property="og:site_name" content="{{ SITENAME }}"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:title" content="{{ SITENAME }}"/>
-    <meta property="og:url" content="{{ MAIN_SITEURL }}"/>
-    <meta property="og:description" content="{{ SITENAME }}"/>
-    {% if OPEN_GRAPH_IMAGE %}
-    <meta property="og:image"
-          content="{{ MAIN_SITEURL }}/{{ OPEN_GRAPH_IMAGE }}"/>
-    {% endif %}
-    {% endblock %}
+        {% block opengraph %}
+            <!-- Open Graph tags -->
+            {% if OPEN_GRAPH_FB_APP_ID %}
+                <meta property="fb:app_id" content="{{ OPEN_GRAPH_FB_APP_ID }}"/>
+            {% endif %}
+            <meta property="og:site_name" content="{{ SITENAME }}"/>
+            <meta property="og:type" content="website"/>
+            <meta property="og:title" content="{{ SITENAME }}"/>
+            <meta property="og:url" content="{{ MAIN_SITEURL }}"/>
+            <meta property="og:description" content="{{ SITENAME }}"/>
+            {% if OPEN_GRAPH_IMAGE %}
+                <meta property="og:image"
+                      content="{{ MAIN_SITEURL }}/{{ OPEN_GRAPH_IMAGE }}"/>
+            {% endif %}
+        {% endblock %}
     {% endif %}
 
     {# Twitter Cards tags #}
@@ -60,40 +60,42 @@
 
     <!-- Bootstrap -->
     {% if BOOTSTRAP_THEME %}
-    <link rel="stylesheet" href="{{ MAIN_SITEURL }}/theme/css/bootstrap.{{ BOOTSTRAP_THEME }}.min.css" type="text/css"/>
+        <link rel="stylesheet" href="{{ MAIN_SITEURL }}/theme/css/bootstrap.{{ BOOTSTRAP_THEME }}.min.css"
+              type="text/css"/>
     {% else %}
-    <link rel="stylesheet" href="{{ MAIN_SITEURL }}/theme/css/bootstrap.min.css" type="text/css"/>
+        <link rel="stylesheet" href="{{ MAIN_SITEURL }}/theme/css/bootstrap.min.css" type="text/css"/>
     {% endif %}
     <link href="{{ MAIN_SITEURL }}/theme/css/font-awesome.min.css" rel="stylesheet">
 
     <link href="{{ MAIN_SITEURL }}/theme/css/pygments/{{ PYGMENTS_STYLE|default('native') }}.css" rel="stylesheet">
     {% if 'tipue_search' in PLUGINS %}
-    <link href="{{ SITEURL}}/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+        <link href="{{ SITEURL }}/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
     {% endif %}
     {% if DOCUTIL_CSS %}
-    <link href="{{ MAIN_SITEURL }}/theme/css/html4css1.css" rel="stylesheet">
+        <link href="{{ MAIN_SITEURL }}/theme/css/html4css1.css" rel="stylesheet">
     {% endif %}
     {% if TYPOGRIFY %}
-    <link href="{{ MAIN_SITEURL }}/theme/css/typogrify.css" rel="stylesheet">
+        <link href="{{ MAIN_SITEURL }}/theme/css/typogrify.css" rel="stylesheet">
     {% endif %}
     <link rel="stylesheet" href="{{ MAIN_SITEURL }}/theme/css/style.css" type="text/css"/>
     {% if CUSTOM_CSS %}
-    <link href="{{ MAIN_SITEURL }}/{{ CUSTOM_CSS }}" rel="stylesheet">
+        <link href="{{ MAIN_SITEURL }}/{{ CUSTOM_CSS }}" rel="stylesheet">
     {% endif %}
     {% if SHARIFF %}
-    <link href="{{ MAIN_SITEURL }}/theme/css/shariff/shariff.min.css" rel="stylesheet">
+        <link href="{{ MAIN_SITEURL }}/theme/css/shariff/shariff.min.css" rel="stylesheet">
     {% endif %}
 
     {% if FEED_ALL_ATOM %}
-    <link href="{{ MAIN_SITEURL }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate"
-          title="{{ SITENAME }} ATOM Feed"/>
+        <link href="{{ MAIN_SITEURL }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate"
+              title="{{ SITENAME }} ATOM Feed"/>
     {% endif %}
     {% if FEED_ALL_RSS %}
-    <link href="{{ MAIN_SITEURL }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate"
-          title="{{ SITENAME }} RSS Feed"/>
+        <link href="{{ MAIN_SITEURL }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate"
+              title="{{ SITENAME }} RSS Feed"/>
     {% endif %}
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 
 </head>
 <body>
@@ -116,35 +118,35 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
                 {% for title, link in MENUITEMS %}
-                <li><a href="{{ link }}">{{ title }}</a></li>
+                    <li><a href="{{ link }}">{{ title }}</a></li>
                 {% endfor %}
                 {% if DISPLAY_PAGES_ON_MENU %}
-                {% for p in PAGES %}
-                <li
-                        {% if p== page %} class="active" {% endif %}><a href="{{ MAIN_SITEURL }}/{{ p.url }}">
-                    {{ p.menulabel|default(p.title) }}
-                </a></li>
-                {% endfor %}
+                    {% for p in PAGES %}
+                        <li
+                                {% if p== page %} class="active" {% endif %}><a href="{{ MAIN_SITEURL }}/{{ p.url }}">
+                            {{ p.menulabel|default(p.title) }}
+                        </a></li>
+                    {% endfor %}
                 {% endif %}
                 {% if DISPLAY_CATEGORIES_ON_MENU %}
-                {% for cat, null in categories %}
-                <li {% if cat== category %}class="active" {% endif %}>
-                    <a href="{{ MAIN_SITEURL }}/{{ cat.url }}">{{ cat | capitalize }}</a>
-                </li>
-                {% endfor %}
+                    {% for cat, null in categories %}
+                        <li {% if cat== category %}class="active" {% endif %}>
+                            <a href="{{ MAIN_SITEURL }}/{{ cat.url }}">{{ cat | capitalize }}</a>
+                        </li>
+                    {% endfor %}
                 {% endif %}
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 {% if 'tipue_search' in PLUGINS %}
-                <li><span>
+                    <li><span>
                 <form class="navbar-search" action="/search">
                     <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"
                            required>
                 </form></span>
-                </li>
+                    </li>
                 {% endif %}
                 <li><a href="{{ MAIN_SITEURL }}/{{ ARCHIVES_URL | default('archives.html') }}"><i
-                        class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+                        class="fa fa-th-list"></i><span class="icon-label">{% trans %}Архіви{% endtrans %}</span></a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -152,9 +154,9 @@
 </div> <!-- /.navbar -->
 <!-- Banner -->
 {% if BANNER and BANNER_ALL_PAGES %}
-{% include 'includes/banner.html' %}
+    {% include 'includes/banner.html' %}
 {% elif BANNER and not BANNER_ALL_PAGES %}
-{% block banner %}{% endblock %}
+    {% block banner %}{% endblock %}
 {% endif %}
 <!-- End Banner -->
 {% block header %}
@@ -176,7 +178,7 @@
 <script src="{{ MAIN_SITEURL }}/theme/js/respond.min.js"></script>
 
 {% if BANNER %}
-<script src="{{ MAIN_SITEURL }}/theme/js/bodypadding.js"></script>
+    <script src="{{ MAIN_SITEURL }}/theme/js/bodypadding.js"></script>
 {% endif %}
 {% include 'includes/github-js.html' %}
 {% include 'includes/disqus_script.html' %}
