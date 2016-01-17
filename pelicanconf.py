@@ -20,9 +20,9 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),)
+LINKS = (
+    ('Pelican', 'http://getpelican.com/'),
+)
 
 # Social widget
 SOCIAL = (('Github', 'https://github.com/linevich'),
@@ -31,8 +31,23 @@ SOCIAL = (('Github', 'https://github.com/linevich'),
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+# RELATIVE_URLS = True
 
 THEME = 'theme'
 CUSTOM_CSS = 'theme/css/bootstrap-material-design.css'
 STATIC_PATHS = ['images', 'css/custom.css']
+
+PLUGINS = [
+    'plugins.i18n_subsites',
+    'plugins.representative_image',
+]
+
+I18N_SUBSITES = {
+    'en': {
+        'SITENAME': 'Anton Linevich\'s blog',
+    },
+    'uk': {
+        'SITENAME': SITENAME,
+    },
+}
+
