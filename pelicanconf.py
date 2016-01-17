@@ -42,6 +42,10 @@ PLUGINS = [
     'plugins.representative_image',
 ]
 
+JINJA_EXTENSIONS = [
+    'jinja2.ext.i18n',
+]
+
 I18N_SUBSITES = {
     'en': {
         'SITENAME': 'Anton Linevich\'s blog',
@@ -51,3 +55,8 @@ I18N_SUBSITES = {
     },
 }
 
+I18N_GETTEXT_LOCALEDIR = 'locales'
+I18N_GETTEXT_DOMAIN = 'messages'
+
+SHOW_ARTICLE_AUTHOR = True
+CC_LICENSE = 'cc-by-nc'
