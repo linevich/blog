@@ -1,0 +1,6 @@
+syntax: glob
+plugins/
+output/
+srv.pid
+pelican.pid
+.idea/
