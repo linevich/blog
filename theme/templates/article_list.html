@@ -11,7 +11,7 @@
                     <div class="card-content">
                         {% if article.featured_image %}
                             <div class="card-image">
-                                <img src="{{ article.featured_image }}" alt="{{ article.title }}">
+                                <img src="{{ article.featured_image | thumbnail(CARD_THUMBNAIL)}}" alt="{{ article.title }}">
                             </div>
                         {% endif %}
                         <div class="card-body">

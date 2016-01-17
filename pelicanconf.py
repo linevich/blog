@@ -37,9 +37,14 @@ THEME = 'theme'
 CUSTOM_CSS = 'theme/css/bootstrap-material-design.css'
 STATIC_PATHS = ['images', 'css/custom.css']
 
+CARD_THUMBNAIL = '360x216'
+HEADER_THUMBNAIL = '1920x400'
+
 PLUGINS = [
     'plugins.i18n_subsites',
     'plugins.representative_image',
+    'advthumbnailer', # Generating thumbnails
+    'autostatic', # Easily staticfiles management
 ]
 
 JINJA_EXTENSIONS = [
