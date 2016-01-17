@@ -2,19 +2,35 @@
 {% block content %}
     {% if articles %}
         {% for article in (articles_page.object_list if articles_page else articles) %}
-            <article>
-                <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
-                {% if DISPLAY_ARTICLE_INFO_ON_INDEX %}
-                    <div class="well well-sm">
-                        {% include "includes/article_info.html" %}
+            <div class="col-md-4">
+                <article class="card">
+
+                    <div class="card-height-indicator"></div>
+
+                    <div class="card-content">
+                        {% if article.featured_image %}
+                            <div class="card-image">
+                                <img src="{{ article.featured_image }}" alt="{{ article.title }}">
+                            </div>
+                        {% endif %}
+                        <div class="card-body">
+                            <div class="text-muted">
+                                <time datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }}</time>
+                            </div>
+                            <h3>
+                                <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+                            </h3>
+
+                            <div class="summary">
+                                {% include 'includes/comment_count.html' %}
+                            </div>
+                        </div>
+
                     </div>
-                {% endif %}
-                <div class="summary">{{ article.summary }}
-                    {% include 'includes/comment_count.html' %}
-                    <a class="btn btn-default btn-xs" href="{{ SITEURL }}/{{ article.url }}">more ...</a>
-                </div>
-            </article>
-            <hr/>
+
+                </article>
+            </div>
+
         {% endfor %}
     {% endif %}
 
