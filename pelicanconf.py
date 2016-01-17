@@ -33,4 +33,6 @@ DEFAULT_PAGINATION = 10
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
 
-THEME = 'simple'
+THEME = 'theme'
+CUSTOM_CSS = 'theme/css/bootstrap-material-design.css'
+STATIC_PATHS = ['images', 'css/custom.css']
