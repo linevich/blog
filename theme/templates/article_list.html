@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+    {% block page_title %}{% endblock %}
     {% if articles %}
         {% for article in (articles_page.object_list if articles_page else articles) %}
             <div class="col-md-4">
