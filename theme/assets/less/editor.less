@@ -1,0 +1,39 @@
+// This styles are loaded by CKeditor
+@import "style";
+
+html {
+  background-color: @body-bg;
+}
+
+body {
+
+  .panel;
+  .single-article;
+  .container-fixed();
+
+  position: relative;
+  display: block;
+  margin-top: 25px;
+  padding: @article-padding;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  height: auto;
+
+  @media (min-width: @screen-sm-min) {
+    width: @container-sm;
+  }
+  @media (min-width: @screen-md-min) {
+    width: @container-md;
+  }
+  @media (min-width: @screen-lg-min) {
+    width: @container-lg/12*10;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+  }
+
+  * {
+    position: relative;
+  }
+}

@@ -1,0 +1,39 @@
+.single-article {
+  @media (max-width: @screen-xs-max) {
+    padding: 0 !important;
+
+    .container {
+      padding: 0;
+    }
+  }
+
+  article {
+    img {
+      .img-responsive;
+    }
+
+    .panel {
+      @media (min-width: @screen-sm-min) {
+        padding: @article-padding;
+      }
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: bold;
+    }
+
+    p {
+      font-size: @article-font-size-p;
+      line-height: @article-line-height;
+      text-indent: 50px;
+    }
+    .meta {
+      .meta-date {
+        margin-right: 20px;
+      }
+      .label {
+        margin-right: 5px;
+      }
+    }
+  }
+}
