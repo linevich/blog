@@ -4,3 +4,4 @@ output/
 srv.pid
 pelican.pid
 .idea/
+theme/vendor
