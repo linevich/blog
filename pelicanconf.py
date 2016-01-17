@@ -60,3 +60,5 @@ I18N_GETTEXT_DOMAIN = 'messages'
 
 SHOW_ARTICLE_AUTHOR = True
 CC_LICENSE = 'cc-by-nc'
+
+DISQUS_SITENAME = 'linevich'
