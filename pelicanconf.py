@@ -35,7 +35,7 @@ DEFAULT_PAGINATION = 10
 
 THEME = 'theme'
 CUSTOM_CSS = 'theme/css/bootstrap-material-design.css'
-STATIC_PATHS = ['images', 'css/custom.css']
+STATIC_PATHS = ['images',]
 
 CARD_THUMBNAIL = '360x216'
 
@@ -68,3 +68,4 @@ CC_LICENSE = 'cc-by-nc'
 
 DISQUS_SITENAME = 'linevich'
 RELATED_POSTS_MAX = 5
+GOOGLE_ANALYTICS_UNIVERSAL = 'UA-43408213-3'
