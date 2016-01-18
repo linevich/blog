@@ -38,13 +38,13 @@ CUSTOM_CSS = 'theme/css/bootstrap-material-design.css'
 STATIC_PATHS = ['images', 'css/custom.css']
 
 CARD_THUMBNAIL = '360x216'
-HEADER_THUMBNAIL = '1920x400'
 
 PLUGINS = [
     'plugins.i18n_subsites',
     'plugins.representative_image',
-    'advthumbnailer', # Generating thumbnails
-    'autostatic', # Easily staticfiles management
+    'plugins.related_posts',
+    'advthumbnailer',  # Generating thumbnails
+    'autostatic',  # Easily staticfiles management
 ]
 
 JINJA_EXTENSIONS = [
@@ -67,3 +67,4 @@ SHOW_ARTICLE_AUTHOR = True
 CC_LICENSE = 'cc-by-nc'
 
 DISQUS_SITENAME = 'linevich'
+RELATED_POSTS_MAX = 5
