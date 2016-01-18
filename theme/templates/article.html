@@ -91,7 +91,7 @@
                 </div>
             </div>
 
-            {% include 'includes/related-posts.html' %}
+
             {% include 'includes/addthis.html' %}
             {% include 'includes/shariff.html' %}
 
@@ -100,11 +100,11 @@
 
     </section>
     <section class="col-lg-4">
-        <aside class="panel">
+        <div class="panel">
             <div class="panel-body">
-
+                {% include 'includes/related-posts.html' %}
             </div>
-        </aside>
+        </div>
     </section>
     <section class="col-sm-12">
         {% include 'includes/comments.html' %}
