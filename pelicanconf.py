@@ -42,7 +42,8 @@ PLUGINS = [
     'plugins.representative_image',
     'plugins.related_posts',
     'plugins.sitemap',
-    'plugins.feed_summary',
+    # Disabled until I find the solution: https://github.com/getpelican/pelican-plugins/issues/650
+    # 'plugins.feed_summary',
     'advthumbnailer',  # Generating thumbnails
     'autostatic',  # Easily staticfiles management
 ]
