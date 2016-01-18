@@ -92,7 +92,9 @@
 
 
         </article>
-
+        <div class="col-sm-12">
+            {% include 'includes/comments.html' %}
+        </div>
     </section>
     <section class="col-lg-4">
         <div class="panel">
@@ -100,9 +102,6 @@
                 {% include 'includes/related-posts.html' %}
             </div>
         </div>
-    </section>
-    <section class="col-sm-12">
-        {% include 'includes/comments.html' %}
     </section>
 
 {% endblock %}
