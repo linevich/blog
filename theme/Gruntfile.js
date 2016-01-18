@@ -38,8 +38,7 @@ module.exports = function (grunt) {
                     paths: ["design"]
                 },
                 files: {
-                    "static/css/style.css": "assets/less/style.less",
-                    "static/css/editor.css": "assets/less/editor.less"
+                    "static/css/style.css": "assets/less/style.less"
                 }
             },
             production: {
@@ -51,8 +50,7 @@ module.exports = function (grunt) {
                     ]
                 },
                 files: {
-                    "static/css/style.css": "assets/less/style.less",
-                    "static/css/editor.css": "assets/less/editor.less"
+                    "static/css/style.css": "assets/less/style.less"
                 }
             }
         },
@@ -60,11 +58,9 @@ module.exports = function (grunt) {
             js: {
                 files: {
                     'static/js/main.js': [
-                        'vendor/**/static/*.min.js',
-                        'vendor/**/static/js/*.min.js',
-                        'vendor/**/static/js/*.min.js',
+                        'vendor/**/dist/js/*.min.js',
                         'vendor/**/*.min.js',
-                        'vendor/jquery-ajax-form/*.js',
+
                         // Assets
                         'assets/*.min.js',
                         'assets/**/*.min.js',
