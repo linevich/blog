@@ -69,28 +69,8 @@
     {% endif %}
 {% endblock %}
 
-{% block header %}
-    {% if article.featured_image %}
-        {% set article_thumbnail = article.featured_image | thumbnail(HEADER_THUMBNAIL) %}
-<img src="{{ article.featured_image | thumbnail(HEADER_THUMBNAIL) }}" style="display: none">
-        <header class="header container-fluid"
-                style="
-                        background-image: url('{{ article_thumbnail }}');
-                        background-size: auto 100%;
-                        height: 400px;
-                        background-position: center;
-                        "
-        >
-            <div class="row">
-
-            </div>
-        </header>
-    {% endif %}
-{% endblock %}
 {% block content %}
-    <section class="col-lg-8 col-lg-offset-2" style="font-size: 16px; line-height: 1.5;
-            {% if article.featured_image %}
-                margin-top: -70px; {% endif %}">
+    <section class="col-lg-8">
         <article class="panel">
             <div class="panel-body">
                 <div class="col-lg-12">
@@ -110,14 +90,23 @@
                     {% include 'includes/taglist.html' %}
                 </div>
             </div>
-            <!-- /.entry-content -->
 
             {% include 'includes/related-posts.html' %}
             {% include 'includes/addthis.html' %}
             {% include 'includes/shariff.html' %}
 
-            </div>
+
         </article>
+
+    </section>
+    <section class="col-lg-4">
+        <aside class="panel">
+            <div class="panel-body">
+
+            </div>
+        </aside>
+    </section>
+    <section class="col-sm-12">
         {% include 'includes/comments.html' %}
     </section>
 
