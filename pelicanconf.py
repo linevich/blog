@@ -41,8 +41,8 @@ PLUGINS = [
     'plugins.i18n_subsites',
     'plugins.representative_image',
     'plugins.related_posts',
-    'pelican.plugins.sitemap',
-    'pelican.plugins.feed_summary',
+    'plugins.sitemap',
+    'plugins.feed_summary',
     'advthumbnailer',  # Generating thumbnails
     'autostatic',  # Easily staticfiles management
 ]
