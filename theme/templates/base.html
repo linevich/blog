@@ -4,6 +4,7 @@
       xmlns:og="http://ogp.me/ns#"
       xmlns:fb="https://www.facebook.com/2008/fbml" {% endif %}>
 <head>
+    <meta name="google-site-verification" content="MCYojhllkhQDMPQHzPXIj1SgY7u8hFLMlQVy5L4nBbo"/>
     <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -131,10 +132,8 @@
 </div>
 
 {% include 'includes/footer.html' %}
-{% include 'includes/github-js.html' %}
 {% include 'includes/disqus_script.html' %}
 {% include 'includes/ga.html' %}
-{% include 'includes/piwik.html' %}
 
 {% block scripts %}{% endblock %}
 
