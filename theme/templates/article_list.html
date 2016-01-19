@@ -1,21 +1,37 @@
 {% extends "base.html" %}
+
 {% block content %}
-    {% block page_title %}{% endblock %}
-    {% if articles %}
-        {% for article in (articles_page.object_list if articles_page else articles) %}
-            <div class="col-md-4">
-                <article class="card">
+    {% block sidebar %}
+        <aside class="col-lg-4 col-sm-12 sidebar">
+            <h3>{% trans %}Категорії{% endtrans %}</h3>
+            <ul class="menu">
+                <li {% if page_name== 'index' %}class="active" {% endif %}>
+                    <a href="{{ MAIN_SITEURL }}/">{% trans %}Всі публікації{% endtrans %}</a>
+                </li>
 
-                    <div class="card-height-indicator"></div>
+                {% for cat, null in categories %}
+                    <li {% if cat== category %}class="active" {% endif %}>
+                        <a href="{{ MAIN_SITEURL }}/{{ cat.url }}">{{ cat }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </aside>
+    {% endblock %}
+    <div class="col-md-8 col-lg-7">
+        {% block page_title %}{% endblock %}
+        {% if articles %}
+            {% for article in (articles_page.object_list if articles_page else articles) %}
+                <div class="col-md-12">
+                    <article class="panel article-preview">
+                        <div class="panel-body">
+                            {% if article.featured_image %}
+                                <div class="row">
+                                    <img src="{{ article.featured_image | thumbnail(POST_THUMBNAIL) }}"
+                                         alt="{{ article.title }}" class="img-responsive">
+                                </div>
+                            {% endif %}
 
-                    <div class="card-content">
-                        {% if article.featured_image %}
-                            <div class="card-image">
-                                <img src="{{ article.featured_image | thumbnail(CARD_THUMBNAIL)}}" alt="{{ article.title }}">
-                            </div>
-                        {% endif %}
-                        <div class="card-body">
-                            <div class="text-muted">
+                            <div class="text-muted meta">
                                 <time datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }}</time>
                             </div>
                             <h3>
@@ -27,13 +43,12 @@
                             </div>
                         </div>
 
-                    </div>
+                    </article>
+                </div>
 
-                </article>
-            </div>
+            {% endfor %}
+        {% endif %}
 
-        {% endfor %}
-    {% endif %}
-
-    {% include 'includes/pagination.html' %}
+        {% include 'includes/pagination.html' %}
+    </div>
 {% endblock content %}
