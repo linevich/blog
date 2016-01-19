@@ -128,3 +128,6 @@ potfile:
 
 compilemessages:
 	pybabel compile --directory locales/ --domain messages
+
+requirements:
+	rm requirements.txt && pip freeze >> requirements.txt
