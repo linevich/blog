@@ -97,14 +97,7 @@
                 {% for title, link in MENUITEMS %}
                     <li><a href="{{ link }}">{{ title }}</a></li>
                 {% endfor %}
-                {% if DISPLAY_PAGES_ON_MENU %}
-                    {% for p in PAGES %}
-                        <li
-                                {% if p== page %} class="active" {% endif %}><a href="{{ MAIN_SITEURL }}/{{ p.url }}">
-                            {{ p.menulabel|default(p.title) }}
-                        </a></li>
-                    {% endfor %}
-                {% endif %}
+
                 {% if DISPLAY_CATEGORIES_ON_MENU %}
                     {% for cat, null in categories %}
                         <li {% if cat== category %}class="active" {% endif %}>
@@ -114,6 +107,13 @@
                 {% endif %}
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                {% if DISPLAY_PAGES_ON_MENU %}
+                    {% for p in PAGES %}
+                        <li {% if p== page %} class="active" {% endif %}>
+                            <a href="{{ MAIN_SITEURL }}/{{ p.url }}">
+                            {{ p.menulabel|default(p.title) }}</a></li>
+                    {% endfor %}
+                {% endif %}
                 <li><a href="{{ MAIN_SITEURL }}/{{ ARCHIVES_URL | default('archives.html') }}"><i
                         class="fa fa-th-list"></i><span class="icon-label">{% trans %}Архіви{% endtrans %}</span></a>
                 </li>
