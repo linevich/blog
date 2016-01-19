@@ -35,7 +35,7 @@ THEME = 'theme'
 CUSTOM_CSS = 'theme/css/bootstrap-material-design.css'
 STATIC_PATHS = ['images',]
 
-CARD_THUMBNAIL = '360x216'
+POST_THUMBNAIL = '720x300'
 
 PLUGINS = [
     'plugins.i18n_subsites',
@@ -70,3 +70,4 @@ CC_LICENSE = 'cc-by-nc'
 DISQUS_SITENAME = 'linevich'
 RELATED_POSTS_MAX = 5
 GOOGLE_ANALYTICS_UNIVERSAL = 'UA-43408213-3'
+DISPLAY_CATEGORIES_ON_MENU = False
