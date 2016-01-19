@@ -58,17 +58,15 @@ module.exports = function (grunt) {
             js: {
                 files: {
                     'static/js/main.js': [
+                        'vendor/jquery/dist/jquery.js',
                         'vendor/**/dist/js/*.min.js',
-                        'vendor/**/*.min.js',
-
-                        // Assets
-                        'assets/*.min.js',
-                        'assets/**/*.min.js',
-                        'assets/**/*.js'
+                        'vendor/wowjs/dist/wow.min.js',
+                        'assets/js/*.js'
                     ]
                 },
                 options: {
-                    preserveComments: false
+                    preserveComments: false,
+                    sourceMap: true
                 }
             }
         }
