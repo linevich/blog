@@ -61,10 +61,9 @@
     <li class="active">{{ article.title }}</li>
 </ol>
 
-
 {% block content %}
     <section class="col-lg-8 single-article">
-        <article class="panel">
+        <article class="panel wow fadeIn">
             <div class="panel-body">
                 <div class="col-lg-12">
                     <h1>
@@ -96,14 +95,7 @@
             {% include 'includes/comments.html' %}
         </div>
     </section>
-    <section class="col-lg-4">
-        <div class="panel">
-            <div class="panel-body">
-                {% include 'includes/related-posts.html' %}
-            </div>
-        </div>
-    </section>
-
+    {% include "includes/sidebar.html" %}
 {% endblock %}
 
 {% block scripts %}
