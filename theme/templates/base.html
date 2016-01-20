@@ -106,8 +106,15 @@
                     {% trans %}Архіви{% endtrans %}</a>
                 </li>
                 {% if lang_siteurls %}
+                    {% import 'includes/translations.html' as translations with context %}
                     {% for lang, url in lang_siteurls.items() %}
-                        <li{% if lang == DEFAULT_LANG %} class="active"{% endif %}><a href="{{ url }}/">{{ lang }}</a>
+                        <li{% if lang == DEFAULT_LANG %} class="active"{% endif %}>
+                            <a href="{{ url }}/
+                                {% if article %}{{ translations.url_if_translated(article) }}{% endif %}
+                                {% if category %}{{ translations.url_if_translated(category) }}{% endif %}
+                                {% if page %}{{ translations.url_if_translated(page) }}{% endif %}
+                                {% if tag %}{{ translations.url_if_translated(tag) }}{% endif %}
+                            ">{{ lang }}</a>
                         </li>
                     {% endfor %}
                 {% endif %}
