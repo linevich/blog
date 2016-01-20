@@ -115,9 +115,15 @@
                                 {{ p.menulabel|default(p.title) }}</a></li>
                     {% endfor %}
                 {% endif %}
-                <li><a href="{{ MAIN_SITEURL }}/{{ ARCHIVES_URL | default('archives.html') }}">{% trans %}
-                    Архіви{% endtrans %}</a>
+                <li><a href="{{ MAIN_SITEURL }}/{{ ARCHIVES_URL | default('archives.html') }}">
+                    {% trans %}Архіви{% endtrans %}</a>
                 </li>
+                {% if lang_siteurls %}
+                    {% for lang, url in lang_siteurls.items() %}
+                        <li{% if lang == DEFAULT_LANG %} class="active"{% endif %}><a href="{{ url }}/">{{ lang }}</a>
+                        </li>
+                    {% endfor %}
+                {% endif %}
             </ul>
         </div>
         <!-- /.navbar-collapse -->
