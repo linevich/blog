@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-01-17 20:28+0200\n"
+"POT-Creation-Date: 2016-01-20 03:25+0200\n"
 "PO-Revision-Date: 2016-01-17 19:24+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: uk\n"
@@ -20,11 +20,31 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.2.0\n"
 
-#: theme/templates/archives.html:2 theme/templates/base.html:149
+#: theme/templates/archives.html:2 theme/templates/base.html:118
 msgid "Архіви"
 msgstr ""
 
 #: theme/templates/archives.html:7 theme/templates/archives.html:14
 msgid "Архів"
+msgstr ""
+
+#: theme/templates/category.html:18
+msgid "Категорія: "
+msgstr ""
+
+#: theme/templates/tag.html:17
+msgid "Тег: "
+msgstr ""
+
+#: theme/templates/includes/sidebar.html:3
+msgid "Категорії"
+msgstr ""
+
+#: theme/templates/includes/sidebar.html:6
+msgid "Всі публікації"
+msgstr ""
+
+#: theme/templates/includes/sidebar.html:20
+msgid "Пов’язані публікації"
 msgstr ""
 
