@@ -38,10 +38,13 @@
         {% endif %}
         {% if article.og_image %}
             <meta property="og:image"
-                  content="{{ SITEURL }}/{{ article.og_image }}"/>
+                  content="https//linevich.net/{{ article.og_image }}"/>
+        {% elif article.featured_image %}
+            <meta property="og:image"
+                  content="https//linevich.net{{ article.featured_image }}"/>
         {% elif OPEN_GRAPH_IMAGE %}
             <meta property="og:image"
-                  content="{{ SITEURL }}/{{ OPEN_GRAPH_IMAGE }}"/>
+                  content="{{ MAIN_SITEURL }}/{{ OPEN_GRAPH_IMAGE }}"/>
         {% endif %}
     {% endif %}
 {% endblock %}
