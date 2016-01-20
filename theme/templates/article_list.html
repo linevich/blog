@@ -1,28 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-    {% block sidebar %}
-        <aside class="col-lg-4 col-sm-12 sidebar">
-            <h3>{% trans %}Категорії{% endtrans %}</h3>
-            <ul class="menu">
-                <li {% if page_name== 'index' %}class="active" {% endif %}>
-                    <a href="{{ MAIN_SITEURL }}/">{% trans %}Всі публікації{% endtrans %}</a>
-                </li>
-
-                {% for cat, null in categories %}
-                    <li {% if cat== category %}class="active" {% endif %}>
-                        <a href="{{ MAIN_SITEURL }}/{{ cat.url }}">{{ cat }}</a>
-                    </li>
-                {% endfor %}
-            </ul>
-        </aside>
-    {% endblock %}
-    <div class="col-md-8 col-lg-7">
+    <div class="col-md-8 col-lg-7 col-lg-offset-1">
         {% block page_title %}{% endblock %}
         {% if articles %}
             {% for article in (articles_page.object_list if articles_page else articles) %}
                 <div class="col-md-12">
-                    <article class="panel article-preview">
+                    <article class="panel article-preview wow fadeIn">
                         <div class="panel-body">
                             {% if article.featured_image %}
                                 <div class="row">
@@ -51,4 +35,5 @@
 
         {% include 'includes/pagination.html' %}
     </div>
+    {% include "includes/sidebar.html" %}
 {% endblock content %}
