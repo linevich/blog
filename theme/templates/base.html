@@ -14,20 +14,7 @@
     {% if 'liquid_tags.notebook' in PLUGINS %}
         {% include 'includes/liquid_tags_nb_header.html' %}
     {% endif %}
-
-    {# Favicons are a touchy subject. For reasoning for the following code, see:
-    http://stackoverflow.com/a/23851464/872397 #}
-    {% if FAVICON %}
-        <link href="{{ MAIN_SITEURL }}/{{ FAVICON }}" rel="icon">
-    {% endif %}
-    {% if FAVICON_IE %}
-        <!--[if IE]>
-    <link rel="shortcut icon" href="{{ MAIN_SITEURL }}/{{ FAVICON_IE }}"><![endif]-->
-    {% endif %}
-    {% if TOUCHICON %}
-        <link rel="apple-touch-icon" href="{{ MAIN_SITEURL }}/{{ TOUCHICON }}">
-    {% endif %}
-
+    {% include "includes/favicon.html" %}
     {% block canonical_rel %}{% endblock %}
 
     {% block meta %}

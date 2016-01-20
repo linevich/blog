@@ -33,7 +33,10 @@ DEFAULT_PAGINATION = 10
 
 THEME = 'theme'
 CUSTOM_CSS = 'theme/css/bootstrap-material-design.css'
-STATIC_PATHS = ['images',]
+STATIC_PATHS = [
+    'images',
+    'favicon',
+]
 
 POST_THUMBNAIL = '720x300'
 
