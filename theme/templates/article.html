@@ -73,14 +73,10 @@
                             {{ article.title }}
                         </a>
                     </h1>
-
-                    <div class="entry-content">
-                        {% include "includes/article_info.html" %}
-
-                    </div>
+                    {% include "includes/article_info.html" %}
                     {{ article.content }}
                     <footer class="meta">
-                        {% include 'includes/taglist.html' %}
+                        {% include "includes/taglist.html" %}
                     </footer>
                 </div>
             </div>
