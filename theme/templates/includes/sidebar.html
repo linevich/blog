@@ -3,12 +3,12 @@
         <h3>{% trans %}Категорії{% endtrans %}</h3>
         <ul class="menu ">
             <li class="{% if page_name== 'index' %}active {% endif %}withripple">
-                <a href="{{ MAIN_SITEURL }}/">{% trans %}Всі публікації{% endtrans %}</a>
+                <a href="{{ SITEURL }}/">{% trans %}Всі публікації{% endtrans %}</a>
             </li>
 
             {% for cat, null in categories %}
                 <li class="{% if cat== category %}active {% endif %}withripple">
-                    <a href="{{ MAIN_SITEURL }}/{{ cat.url }}">{{ cat }}</a>
+                    <a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a>
                 </li>
             {% endfor %}
         </ul>
