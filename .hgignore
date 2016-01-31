@@ -1,8 +1,12 @@
 syntax: glob
+*.pid
+.idea/
+*.orig
+*.pyc
+*.mo
+*.xml
 plugins/
 output/
-srv.pid
-pelican.pid
-.idea/
+theme/node_modules
+theme/static
 theme/vendor
-*.mo
