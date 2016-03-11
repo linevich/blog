@@ -38,17 +38,23 @@ STATIC_PATHS = [
     'favicon',
 ]
 
-POST_THUMBNAIL = '720x300'
+POST_THUMBNAIL = '623x300'
 
 PLUGINS = [
     'plugins.i18n_subsites',
     'plugins.representative_image',
+    'autostatic',  # Easily staticfiles management
+    'advthumbnailer',  # Generating thumbnails
     'plugins.related_posts',
     'plugins.sitemap',
+    'plugins.gzip_cache',
+   # 'plugins.optimize_images',
+    'pelican_youtube',
     # Disabled until I find the solution: https://github.com/getpelican/pelican-plugins/issues/650
     # 'plugins.feed_summary',
-    'advthumbnailer',  # Generating thumbnails
-    'autostatic',  # Easily staticfiles management
+    '#minify',
+#    'plugins.pelican-image-optimizer',
+
 ]
 
 JINJA_EXTENSIONS = [
@@ -78,3 +84,11 @@ USE_OPEN_GRAPH = True
 OPEN_GRAPH_FB_APP_ID = 553505671478948
 TWITTER_USERNAME = "linevich_ua"
 DEFAULT_DATE_FORMAT = "%d/%m/%y"
+
+MINIFY = {
+  'remove_comments': True,
+  'remove_all_empty_space': True,
+  'remove_optional_attribute_quotes': False
+}
+
+IMAGE_OPTIMIZATION_ONCE_AND_FOR_ALL = False
