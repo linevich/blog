@@ -1,0 +1,25 @@
+<footer class="footer">
+    <div class="container text-center">
+        <div class="row">
+            {% if articles %}
+                {% set copy_date = articles[0].date.strftime('%Y') %}
+            {% else %}
+                {% set copy_date = '' %}
+            {% endif %}
+            <div class="col-xs-12">&copy; {{ copy_date }} {{ AUTHOR }}
+                &middot; Powered by <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>.
+                {%- if CC_LICENSE or CC_LICENSE_DERIVATIVES or CC_LICENSE_COMMERCIAL %}
+                    {% from 'includes/cc-license.html' import cc_license_mark %}
+                    <p>
+                        <small>{{ cc_license_mark(cc_name=CC_LICENSE,derivatives=CC_LICENSE_DERIVATIVES,commercial=CC_LICENSE_COMMERCIAL,attr_markup=CC_ATTR_MARKUP,attr_props={'title':SITENAME,'name':article.author if article else AUTHOR,'url':SITEURL}) }}</small>
+                    </p>
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+</footer>
+<div class="footer-button">
+        <a href="#" class="btn btn-primary btn-fab"><i class="material-icons">keyboard_arrow_up</i></a>
+</div>
+

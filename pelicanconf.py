@@ -1,0 +1,94 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*- #
+from __future__ import unicode_literals
+
+AUTHOR = 'Антон Ліневич'
+SITENAME = 'Блог Антона Ліневича'
+SITEURL = '/'
+
+PATH = 'content'
+
+TIMEZONE = 'Europe/Kiev'
+
+DEFAULT_LANG = 'uk'
+
+FEED_ALL_ATOM = 'feeds/all.atom.xml'
+CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
+TRANSLATION_FEED_ATOM = 'feeds/atom-%s.xml'
+FEED_USE_SUMMARY = True
+
+# Blogroll
+LINKS = (
+    ('Pelican', 'http://getpelican.com/'),
+)
+
+# Social widget
+SOCIAL = (('Github', 'https://github.com/linevich'),
+          ('Facebook', 'https://facebook.com/anton.linevich'),)
+
+DEFAULT_PAGINATION = 10
+
+# Uncomment following line if you want document-relative URLs when developing
+# RELATIVE_URLS = True
+
+THEME = 'theme'
+CUSTOM_CSS = 'theme/css/bootstrap-material-design.css'
+STATIC_PATHS = [
+    'images',
+    'favicon',
+]
+
+POST_THUMBNAIL = '623x300'
+
+PLUGINS = [
+    'plugins.i18n_subsites',
+    'plugins.representative_image',
+    'autostatic',  # Easily staticfiles management
+    'advthumbnailer',  # Generating thumbnails
+    'plugins.related_posts',
+    'plugins.sitemap',
+    'plugins.gzip_cache',
+   # 'plugins.optimize_images',
+    'pelican_youtube',
+    # Disabled until I find the solution: https://github.com/getpelican/pelican-plugins/issues/650
+    # 'plugins.feed_summary',
+    '#minify',
+#    'plugins.pelican-image-optimizer',
+
+]
+
+JINJA_EXTENSIONS = [
+    'jinja2.ext.i18n',
+]
+
+I18N_SUBSITES = {
+    'en': {
+        'SITENAME': 'Anton Linevich\'s blog',
+    },
+    'uk': {
+        'SITENAME': SITENAME,
+    },
+}
+
+I18N_GETTEXT_LOCALEDIR = 'locales'
+I18N_GETTEXT_DOMAIN = 'messages'
+
+SHOW_ARTICLE_AUTHOR = False
+CC_LICENSE = 'cc-by-nc'
+
+DISQUS_SITENAME = 'linevich'
+RELATED_POSTS_MAX = 5
+GOOGLE_ANALYTICS_UNIVERSAL = 'UA-43408213-3'
+DISPLAY_CATEGORIES_ON_MENU = False
+USE_OPEN_GRAPH = True
+OPEN_GRAPH_FB_APP_ID = 553505671478948
+TWITTER_USERNAME = "linevich_ua"
+DEFAULT_DATE_FORMAT = "%d/%m/%y"
+
+MINIFY = {
+  'remove_comments': True,
+  'remove_all_empty_space': True,
+  'remove_optional_attribute_quotes': False
+}
+
+IMAGE_OPTIMIZATION_ONCE_AND_FOR_ALL = False
