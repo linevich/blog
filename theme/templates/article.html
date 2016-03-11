@@ -62,23 +62,19 @@
 </ol>
 
 {% block content %}
-    <section class="col-lg-8 single-article">
-        <article class="panel wow fadeIn">
-            <div class="panel-body">
-                <div class="col-lg-12">
-                    <h1>{{ article.title }}</h1>
-                    {% include "includes/article_info.html" %}
-                    {{ article.content }}
-                    <footer class="meta">
-                        {% include "includes/taglist.html" %}
-                    </footer>
-                </div>
+    <section class="row single-article">
+        <article class="col-xs-12 col-sm-12 col-lg-10 col-lg-offset-1 wow fadeIn">
+            <div class="col-lg-12">
+                <h1>{{ article.title }}</h1>
+                {% include "includes/article_info.html" %}
+                {{ article.content }}
+                <footer class="meta">
+                    {% include "includes/taglist.html" %}
+                </footer>
             </div>
-
 
             {% include 'includes/addthis.html' %}
             {% include 'includes/shariff.html' %}
-
 
         </article>
         <div class="col-sm-12">
