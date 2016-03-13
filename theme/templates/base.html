@@ -64,7 +64,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 
 </head>
-<body>
+<body class="{% if article %}article{% endif %}">
 
 <div class="navbar navbar-default navbar-static-top" role="navigation">
     <div class="container{% if BOOTSTRAP_FLUID %}-fluid{% endif %}">
@@ -131,7 +131,7 @@
         {% endblock %}
     </div>
 </div>
-
+{% block after_contnet %}{% endblock %}
 {% include 'includes/footer.html' %}
 {% include 'includes/disqus_script.html' %}
 {% include 'includes/ga.html' %}
