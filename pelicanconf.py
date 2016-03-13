@@ -48,12 +48,11 @@ PLUGINS = [
     'plugins.related_posts',
     'plugins.sitemap',
     'plugins.gzip_cache',
-   # 'plugins.optimize_images',
     'pelican_youtube',
     # Disabled until I find the solution: https://github.com/getpelican/pelican-plugins/issues/650
     # 'plugins.feed_summary',
-    '#minify',
-#    'plugins.pelican-image-optimizer',
+    'minify',
+    'plugins.simple_footnotes',
 
 ]
 
