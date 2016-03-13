@@ -86,9 +86,16 @@ TWITTER_USERNAME = "linevich_ua"
 DEFAULT_DATE_FORMAT = "%d/%m/%y"
 
 MINIFY = {
-  'remove_comments': True,
-  'remove_all_empty_space': True,
-  'remove_optional_attribute_quotes': False
+    'remove_comments': True,
+    'remove_all_empty_space': True,
+    'remove_optional_attribute_quotes': False
 }
 
 IMAGE_OPTIMIZATION_ONCE_AND_FOR_ALL = False
+
+MD_EXTENSIONS = [
+    'codehilite(css_class=highlight)',
+    'extra',
+    'toc',
+    'captions',
+]
