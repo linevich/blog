@@ -1,3 +1,4 @@
+// === Figures
 figure {
 
   figcaption {
@@ -8,5 +9,28 @@ figure {
       font-style: italic;
       font-size: @article-font-size-p*0.8 !important;
     }
+  }
+}
+
+// === Footnotes
+
+.simple-footnote {
+  font-size: 14px !important;
+  margin-left: -4px;
+
+  &:before {
+    content: "[";
+  }
+
+  &:after {
+    content: "]";
+  }
+}
+
+.simple-footnote-back {
+  color: @grey-600;
+
+  &:before {
+    content: " ";
   }
 }
