@@ -42,7 +42,7 @@ POST_THUMBNAIL = '623x300'
 
 PLUGINS = [
     'plugins.i18n_subsites',
-    'plugins.representative_image',
+    'representative_image',
     'autostatic',  # Easily staticfiles management
     'advthumbnailer',  # Generating thumbnails
     'plugins.related_posts',
