@@ -38,17 +38,22 @@ STATIC_PATHS = [
     'favicon',
 ]
 
-POST_THUMBNAIL = '720x300'
+POST_THUMBNAIL = '623x300'
 
 PLUGINS = [
     'plugins.i18n_subsites',
     'plugins.representative_image',
+    'autostatic',  # Easily staticfiles management
+    'advthumbnailer',  # Generating thumbnails
     'plugins.related_posts',
     'plugins.sitemap',
+    'plugins.gzip_cache',
+    'pelican_youtube',
     # Disabled until I find the solution: https://github.com/getpelican/pelican-plugins/issues/650
     # 'plugins.feed_summary',
-    'advthumbnailer',  # Generating thumbnails
-    'autostatic',  # Easily staticfiles management
+    'minify',
+    'plugins.simple_footnotes',
+
 ]
 
 JINJA_EXTENSIONS = [
@@ -73,8 +78,23 @@ CC_LICENSE = 'cc-by-nc'
 DISQUS_SITENAME = 'linevich'
 RELATED_POSTS_MAX = 5
 GOOGLE_ANALYTICS_UNIVERSAL = 'UA-43408213-3'
-DISPLAY_CATEGORIES_ON_MENU = False
+DISPLAY_CATEGORIES_ON_MENU = True
 USE_OPEN_GRAPH = True
 OPEN_GRAPH_FB_APP_ID = 553505671478948
 TWITTER_USERNAME = "linevich_ua"
 DEFAULT_DATE_FORMAT = "%d/%m/%y"
+
+MINIFY = {
+    'remove_comments': True,
+    'remove_all_empty_space': True,
+    'remove_optional_attribute_quotes': False
+}
+
+IMAGE_OPTIMIZATION_ONCE_AND_FOR_ALL = False
+
+MD_EXTENSIONS = [
+    'codehilite(css_class=highlight)',
+    'extra',
+    'toc',
+    'captions',
+]
