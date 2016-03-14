@@ -28,6 +28,14 @@ module.exports = function (grunt) {
                         ],
                         dest: 'static/favicon',
                         flatten: true
+                    },
+                    {   //Pygments
+                        expand: true,
+                        src: [
+                            'assets/css/pygments/*'
+                        ],
+                        dest: 'static/css/pygments',
+                        flatten: true
                     }
                 ]
             }
