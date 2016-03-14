@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*- #
+# -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
 AUTHOR = 'Антон Ліневич'
@@ -42,7 +42,7 @@ POST_THUMBNAIL = '623x300'
 
 PLUGINS = [
     'plugins.i18n_subsites',
-    'plugins.representative_image',
+    'representative_image',
     'autostatic',  # Easily staticfiles management
     'advthumbnailer',  # Generating thumbnails
     'plugins.related_posts',
