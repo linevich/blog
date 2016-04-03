@@ -36,6 +36,7 @@ CUSTOM_CSS = 'theme/css/bootstrap-material-design.css'
 STATIC_PATHS = [
     'images',
     'favicon',
+    'pdf'
 ]
 
 POST_THUMBNAIL = '623x300'
