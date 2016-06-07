@@ -44,8 +44,9 @@
 
     {# Twitter Cards tags #}
     {% include 'includes/twitter_cards.html' %}
-
-    <link rel="stylesheet" href="{{ MAIN_SITEURL }}/theme/css/style.css" type="text/css"/>
+    <style type="text/css">
+        {% include 'includes/style.css' %}
+    </style>
     {% if FEED_ALL_ATOM %}
         <link href="{{ MAIN_SITEURL }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate"
               title="{{ SITENAME }} ATOM Feed"/>
