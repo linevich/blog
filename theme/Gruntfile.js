@@ -7,7 +7,8 @@ module.exports = function (grunt) {
                         expand: true,
                         src: [
                             'vendor/**/fonts/*',
-                            'vendor/**/static/fonts/*'
+                            'vendor/**/static/fonts/*',
+                            'assets/fonts/*'
                         ],
                         dest: 'static/fonts/',
                         flatten: true
@@ -35,6 +36,14 @@ module.exports = function (grunt) {
                             'assets/css/pygments/*'
                         ],
                         dest: 'static/css/pygments',
+                        flatten: true
+                    },
+                    {
+                        expand: true,
+                        src: [
+                            'assets/css/*.css'
+                        ],
+                        dest: 'static/css/',
                         flatten: true
                     }
                 ]
@@ -77,11 +86,41 @@ module.exports = function (grunt) {
                     sourceMap: true
                 }
             }
+        },
+        uncss: {
+            options: {
+                csspath: '../theme/static/css',
+                htmlroot: '../output',
+                stylesheets: ['style.css']
+            },
+            dist: {
+                files: {
+                    'static/css/style.css': ['../output/*.html', '../output/**/*.html'],
+                    'static/css/solarizeddark.css': ['../output/*.html', '../output/**/*.html']
+                }
+            }
+        },
+
+        cssmin: {
+            target: {
+                options: {
+                    keepSpecialComments: 0
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'static/css',
+                    src: 'style.css',
+                    dest: 'static/css'
+                }]
+            }
         }
+
 
     });
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-less');
-    grunt.loadNpmTasks('grunt-contrib-uglify')
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-uncss');
 };
 
