@@ -12,6 +12,7 @@ pip-delete-this-directory.txt
 *.bak
 content/
 output/
+plugins/
 pelican-plugins/
 theme/node_modules/
 theme/static/
