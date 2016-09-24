@@ -1,9 +1,4 @@
 Makefile
-content/*
-output/*
-theme/node_modules/*
-theme/vendor/*
-theme/static/*
 .idea/
 __pycache__/
 *.py[cod]
@@ -15,7 +10,7 @@ pip-delete-this-directory.txt
 *.log
 *.pid
 *.bak
-Would skip repository content/
+content/
 output/
 pelican-plugins/
 theme/node_modules/
