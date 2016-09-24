@@ -15,3 +15,9 @@ pip-delete-this-directory.txt
 *.log
 *.pid
 *.bak
+Would skip repository content/
+output/
+pelican-plugins/
+theme/node_modules/
+theme/static/
+theme/vendor/
