@@ -59,6 +59,7 @@ PLUGINS = [
 
 JINJA_EXTENSIONS = [
     'jinja2.ext.i18n',
+    'jinja2.ext.autoescape',
 ]
 
 I18N_SUBSITES = {
