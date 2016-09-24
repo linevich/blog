@@ -1,25 +1,24 @@
-Babel==2.2.0
-Jinja2==2.8
-Markdown==2.6.5
-MarkupSafe==0.23
-Pillow==3.1.1
-Pygments==2.1.3
-Unidecode==0.04.19
-beautifulsoup4==4.4.1
+Babel==2.3.4
+beautifulsoup4==4.5.1
 blinker==1.4
 docutils==0.12
-feedgenerator==1.7
+feedgenerator==1.9
 htmlmin==0.1.10
+Jinja2==2.8
 joblib==0.9.4
-lxml==3.5.0
+lxml==3.6.4
+Markdown==2.6.7
 -e git+https://github.com/sander76/markdown-figures.git@104ba1ca1913333ccc0b226cf0f4ff04ae0e060d#egg=markdown_figures
+MarkupSafe==0.23
 pelican==3.6.3
-pelican-advthumbnailer==0.4.0
+pelican-advthumbnailer==0.6.0
 pelican-autostatic==0.2.2
 pelican-minify==0.9
+-e git+https://github.com/linevich/representative_image@fae9ea7582c05566873c58ba115448121f07b3ed#egg=Pelican_representative_image_plugin
 pelican-youtube==0.2.0
-python-dateutil==2.5.0
-pytz==2015.7
+Pillow==3.3.1
+Pygments==2.1.3
+python-dateutil==2.5.3
+pytz==2016.6.1
 six==1.10.0
-wheel==0.29.0
--e git+https://github.com/linevich/representative_image#egg=representative_image
+Unidecode==0.4.19
