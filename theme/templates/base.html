@@ -46,10 +46,6 @@
     {% include 'includes/twitter_cards.html' %}
 
     <link rel="stylesheet" href="{{ MAIN_SITEURL }}/theme/css/style.css" type="text/css"/>
-
-
-    <link href="{{ MAIN_SITEURL }}/theme/css/pygments/{{ PYGMENTS_STYLE|default('solarizeddark') }}.css"
-          rel="stylesheet">
     {% if FEED_ALL_ATOM %}
         <link href="{{ MAIN_SITEURL }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate"
               title="{{ SITENAME }} ATOM Feed"/>
@@ -58,10 +54,6 @@
         <link href="{{ MAIN_SITEURL }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate"
               title="{{ SITENAME }} RSS Feed"/>
     {% endif %}
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-
 </head>
 <body class="{% if article %}article{% endif %}">
 
@@ -141,6 +133,12 @@
 
 {% block scripts %}{% endblock %}
 
-<script src="{{ MAIN_SITEURL }}/theme/js/main.js"></script>
+{# Unimportant css files placed here to speedup page loading #}
+
+<link rel="stylesheet" href="{{ MAIN_SITEURL }}/theme/css/fonts.css" type="text/css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="{{ MAIN_SITEURL }}/theme/css/pygments/{{ PYGMENTS_STYLE|default('solarizeddark') }}.css" rel="stylesheet">
+
+<script src="{{ MAIN_SITEURL }}/theme/js/main.js" async></script>
 </body>
 </html>
