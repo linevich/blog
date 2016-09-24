@@ -109,12 +109,16 @@
                     {% import 'includes/translations.html' as translations with context %}
                     {% for lang, url in lang_siteurls.items() %}
                         <li{% if lang == DEFAULT_LANG %} class="active"{% endif %}>
-                            <a href="{{ url }}/
-                                {% if article %}{{ translations.url_if_translated(article) }}{% endif %}
-                                {% if category %}{{ translations.url_if_translated(category) }}{% endif %}
-                                {% if page %}{{ translations.url_if_translated(page) }}{% endif %}
-                                {% if tag %}{{ translations.url_if_translated(tag) }}{% endif %}
-                            ">{{ lang }}</a>
+                            {% if article %}
+                                {% set slug = translations.url_if_translated(article) %}
+                            {% elif category %}
+                                {% set slug = translations.url_if_translated(category) %}
+                            {% elif page %}
+                                {% set slug = translations.url_if_translated(page) %}
+                            {% elif tag %}
+                                {% set slug = translations.url_if_translated(tag) %}
+                            {% endif %}
+                            <a href="{{ url }}/{{ slug }}">{{ lang }}</a>
                         </li>
                     {% endfor %}
                 {% endif %}
