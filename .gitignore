@@ -13,7 +13,6 @@ pip-delete-this-directory.txt
 content/
 output/
 plugins/
-pelican-plugins/
 theme/node_modules/
 theme/static/
 theme/vendor/
