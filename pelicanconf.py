@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+import os
 
 AUTHOR = 'Антон Ліневич'
 SITENAME = 'Блог Антона Ліневича'
@@ -54,6 +55,7 @@ PLUGINS = [
     # 'plugins.feed_summary',
     'minify',
     'plugins.simple_footnotes',
+    'pelican_uncss',
 
 ]
 
@@ -100,3 +102,5 @@ MD_EXTENSIONS = [
     'captions',
     'smarty',
 ]
+UNCSS_CSS_PATH = os.path.abspath('output/')
+UNCSS_STYLESHEETS = ['style.css']
