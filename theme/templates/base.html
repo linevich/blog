@@ -127,8 +127,11 @@
     </div>
 </div>
 {% block after_contnet %}{% endblock %}
+
+{% if page or article %}
+    {% include 'includes/disqus_script.html' %}
+{% endif %}
 {% include 'includes/footer.html' %}
-{% include 'includes/disqus_script.html' %}
 {% include 'includes/ga.html' %}
 
 {% block scripts %}{% endblock %}
