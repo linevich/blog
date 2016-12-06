@@ -88,12 +88,12 @@
             <ul class="nav navbar-nav navbar-right">
                 {% if DISPLAY_PAGES_ON_MENU %}
                     {% for p in PAGES %}
-                        <li {% if p== page %} class="active" {% endif %}>
-                            <a href="{{ MAIN_SITEURL }}/{{ p.url }}">
+                        <li {% if p == page %} class="active" {% endif %}>
+                            <a href="{{ SITEURL }}/{{ p.url }}">
                                 {{ p.menulabel|default(p.title) }}</a></li>
                     {% endfor %}
                 {% endif %}
-                <li><a href="{{ MAIN_SITEURL }}/{{ ARCHIVES_URL | default('archives.html') }}">
+                <li><a href="{{ SITEURL }}/{{ ARCHIVES_URL | default('archives.html') }}">
                     {% trans %}Архіви{% endtrans %}</a>
                 </li>
                 {% if lang_siteurls %}
