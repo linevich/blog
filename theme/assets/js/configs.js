@@ -1,6 +1,6 @@
 /**
  * Js libs settings
- * */
+ */
 
 
 // Material settings
@@ -12,3 +12,5 @@ var wow = new WOW({
     mobile: false
 });
 wow.init();
+
+$('.gif').gifplayer();

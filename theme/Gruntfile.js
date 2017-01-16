@@ -67,6 +67,7 @@ module.exports = function (grunt) {
                 files: {
                     'static/js/main.js': [
                         'vendor/jquery/dist/jquery.js',
+                        'vendor/jquery.gifplayer/dist/jquery.gifplayer.js',
                         'vendor/**/dist/js/*.min.js',
                         'vendor/wowjs/dist/wow.min.js',
                         'assets/js/*.js'
