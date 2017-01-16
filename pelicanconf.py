@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 AUTHOR = 'Антон Ліневич'
-SITENAME = 'Блог Антона Ліневича'
+SITENAME = 'Блоґ Антона Ліневича'
 SITEURL = '/'
 
 PATH = 'content'
@@ -100,3 +100,17 @@ MD_EXTENSIONS = [
     'captions',
     'smarty',
 ]
+
+LANGUAGES = {
+    'en': 'English',
+    'uk': 'Українська',
+}
+
+
+def full_language_name(lang_code):
+    return LANGUAGES[lang_code]
+
+
+JINJA_FILTERS = {
+    'full_language_name': full_language_name,
+}
