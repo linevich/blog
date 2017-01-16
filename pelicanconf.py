@@ -101,6 +101,7 @@ MD_EXTENSIONS = [
     'smarty',
 ]
 
+# Original idea of full language name filter: https://goo.gl/oNGKcu
 LANGUAGES = {
     'en': 'English',
     'uk': 'Українська',
