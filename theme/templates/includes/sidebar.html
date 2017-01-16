@@ -18,9 +18,11 @@
             <div id="related-posts" class="row vert-offset-bottom-2">
                 <div class="col-sm-12 col-xs-12">
                     <h3>{% trans %}Пов’язані публікації{% endtrans %}</h3>
-                    <ul class="list-unstyled">
+                    <ul class="menu">
                         {% for related_post in article.related_posts %}
-                            <li><a href="{{ SITEURL }}/{{ related_post.url }}">{{ related_post.title }}</a></li>
+                            <li>
+                                <a href="{{ SITEURL }}/{{ related_post.url }}" class="widthripple">{{ related_post.title }}</a>
+                            </li>
                         {% endfor %}
                     </ul>
                 </div>
