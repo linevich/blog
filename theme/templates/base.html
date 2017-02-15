@@ -66,8 +66,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="{{ MAIN_SITEURL }}/" class="navbar-brand">
-                {% if SITELOGO %}<img src="{{ MAIN_SITEURL }}/{{ SITELOGO }}" width="{{ SITELOGO_SIZE }}"/> {% endif %}
+            <a href="{{ SITEURL }}/" class="navbar-brand">
+                {% if SITELOGO %}<img src="{{ SITEURL }}/{{ SITELOGO }}" width="{{ SITELOGO_SIZE }}"/> {% endif %}
                 {% if not HIDE_SITENAME %}{{ SITENAME }}{% endif %}
             </a>
         </div>
@@ -80,7 +80,7 @@
                 {% if DISPLAY_CATEGORIES_ON_MENU %}
                     {% for cat, null in categories %}
                         <li {% if cat== category %}class="active" {% endif %}>
-                            <a href="{{ MAIN_SITEURL }}/{{ cat.url }}">{{ cat | capitalize }}</a>
+                            <a href="{{ SITEURL }}/{{ cat.url }}">{{ cat | capitalize }}</a>
                         </li>
                     {% endfor %}
                 {% endif %}
