@@ -63,7 +63,7 @@ JINJA_EXTENSIONS = [
 
 I18N_SUBSITES = {
     'en': {
-        'SITENAME': 'Anton Linevich\'s blog',
+        'SITENAME': 'Anton Linevych\'s blog',
     },
     'uk': {
         'SITENAME': SITENAME,
