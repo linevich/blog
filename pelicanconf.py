@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-AUTHOR = 'Антон Ліневич'
 SITENAME = 'Блоґ Антона Ліневича'
 SITEURL = '/'
 
@@ -64,9 +63,13 @@ JINJA_EXTENSIONS = [
 I18N_SUBSITES = {
     'en': {
         'SITENAME': 'Anton Linevych\'s blog',
+        'TWITTER_USERNAME': 'linevich_en',
+        'AUTHOR': 'Anton Linevych'
     },
     'uk': {
         'SITENAME': SITENAME,
+        'TWITTER_USERNAME': 'linevich_ua',
+        'AUTHOR': 'Антон Ліневич'
     },
 }
 
@@ -82,7 +85,6 @@ GOOGLE_ANALYTICS_UNIVERSAL = 'UA-43408213-3'
 DISPLAY_CATEGORIES_ON_MENU = True
 USE_OPEN_GRAPH = True
 OPEN_GRAPH_FB_APP_ID = 553505671478948
-TWITTER_USERNAME = "linevich_ua"
 DEFAULT_DATE_FORMAT = "%d/%m/%y"
 
 MINIFY = {
@@ -115,3 +117,5 @@ def full_language_name(lang_code):
 JINJA_FILTERS = {
     'full_language_name': full_language_name,
 }
+
+TWITTER_CARDS = True
