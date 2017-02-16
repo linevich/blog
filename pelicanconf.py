@@ -13,7 +13,7 @@ DEFAULT_LANG = 'uk'
 
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
 CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
-TRANSLATION_FEED_ATOM = 'feeds/atom-%s.xml'
+TRANSLATION_FEED_ATOM = None
 FEED_USE_SUMMARY = True
 
 # Blogroll
@@ -58,13 +58,16 @@ PLUGINS = [
 
 JINJA_EXTENSIONS = [
     'jinja2.ext.i18n',
+    'jinja2.ext.with_',
 ]
 
 I18N_SUBSITES = {
     'en': {
         'SITENAME': 'Anton Linevych\'s blog',
         'TWITTER_USERNAME': 'linevich_en',
-        'AUTHOR': 'Anton Linevych'
+        'AUTHOR': 'Anton Linevych',
+        'TRANSLATION_FEED_ATOM': '../%s/feeds/all.atom.xml',
+        'CATEGORY_FEED_ATOM': 'feeds/%s.atom.xml',
     },
     'uk': {
         'SITENAME': SITENAME,
