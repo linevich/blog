@@ -46,12 +46,12 @@
     {% include 'includes/twitter_cards.html' %}
 
     <link rel="stylesheet" href="{{ MAIN_SITEURL }}/theme/css/style.css" type="text/css"/>
-    {% if FEED_ALL_ATOM %}
-        <link href="{{ MAIN_SITEURL }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate"
+    {% if FEED_ATOM %}
+        <link href="{{ MAIN_SITEURL }}/{{ FEED_ATOM }}" type="application/atom+xml" rel="alternate"
               title="{{ SITENAME }} ATOM Feed"/>
     {% endif %}
-    {% if FEED_ALL_RSS %}
-        <link href="{{ MAIN_SITEURL }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate"
+    {% if FEED_RSS %}
+        <link href="{{ MAIN_SITEURL }}/{{ FEED_RSS }}" type="application/rss+xml" rel="alternate"
               title="{{ SITENAME }} RSS Feed"/>
     {% endif %}
 </head>

@@ -11,9 +11,8 @@ TIMEZONE = 'Europe/Kiev'
 
 DEFAULT_LANG = 'uk'
 
-FEED_ALL_ATOM = 'feeds/all.atom.xml'
 CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
-TRANSLATION_FEED_ATOM = None
+FEED_RSS = '%s/rss.xml' % DEFAULT_LANG
 FEED_USE_SUMMARY = True
 
 # Blogroll
@@ -39,6 +38,7 @@ STATIC_PATHS = [
 ]
 
 POST_THUMBNAIL = '623x300'
+RELATED_POST_THUMBNAIL = '360x173'
 
 PLUGINS = [
     'plugins.i18n_subsites',
@@ -66,8 +66,8 @@ I18N_SUBSITES = {
         'SITENAME': 'Anton Linevych\'s blog',
         'TWITTER_USERNAME': 'linevich_en',
         'AUTHOR': 'Anton Linevych',
-        'TRANSLATION_FEED_ATOM': '../%s/feeds/all.atom.xml',
-        'CATEGORY_FEED_ATOM': 'feeds/%s.atom.xml',
+        'FEED_RSS': 'en/rss.xml',
+        'CATEGORY_FEED_RSS': 'feeds/%s.rss.xml',
     },
     'uk': {
         'SITENAME': SITENAME,
