@@ -13,6 +13,7 @@
     "wowjs": "1.1.2",
     "bootstrap-material-design": "https://github.com/FezVrasta/bootstrap-material-design.git#~0.5.10",
     "highlight": "9.1.0",
-    "jquery.gifplayer": "^0.3.2"
+    "jquery.gifplayer": "^0.3.2",
+    "clamp-js": "*"
   }
 }

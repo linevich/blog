@@ -14,3 +14,7 @@ var wow = new WOW({
 wow.init();
 
 $('.gif').gifplayer();
+
+$('.related-article-title').each(function (i) {
+    $clamp(this, {clamp: 2});
+});

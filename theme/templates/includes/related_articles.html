@@ -1,0 +1,23 @@
+
+<aside id="related-articles">
+    {% if article %}
+        {% if article.related_posts %}
+            {% for related_post in article.related_posts %}
+                <div class="col-sm-4">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            {% if related_post.featured_image %}
+                                <div class="row">
+                                    <img src="{{ related_post.featured_image | thumbnail(RELATED_POST_THUMBNAIL) }}"
+                                         alt="{{ related_post.title }}" class="img-responsive">
+                                </div>
+                            {% endif %}
+                            <h4 class="related-article-title"><a
+                                    href="{{ SITEURL }}/{{ related_post.url }}">{{ related_post.title }}</a></h4>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endif %}
+</aside>
