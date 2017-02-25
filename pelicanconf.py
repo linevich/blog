@@ -42,7 +42,7 @@ RELATED_POST_THUMBNAIL = '360x173'
 
 PLUGINS = [
     'plugins.i18n_subsites',
-    'representative_image',
+    'plugins.representative_image',
     'autostatic',  # Easily staticfiles management
     'advthumbnailer',  # Generating thumbnails
     'plugins.related_posts',
