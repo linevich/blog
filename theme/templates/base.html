@@ -141,7 +141,10 @@
 <link rel="stylesheet" href="{{ MAIN_SITEURL }}/theme/css/fonts.css" type="text/css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 <link href="{{ MAIN_SITEURL }}/theme/css/pygments/{{ PYGMENTS_STYLE|default('solarizeddark') }}.css" rel="stylesheet">
-
 <script src="{{ MAIN_SITEURL }}/theme/js/main.js" async></script>
+{# Sharing scripts #}
+{% if article %}
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-569ee5e676ece814" async></script>
+{% endif %}
 </body>
 </html>
