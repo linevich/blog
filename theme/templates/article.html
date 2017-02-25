@@ -39,73 +39,76 @@
         {% if article.og_image %}
             <meta property="og:image"
                   content="https://linevi.ch/{{ article.og_image }}"/>
-            {% elif article.featured_image %}
+        {% elif article.featured_image %}
             <meta property="og:image"
                   content="https://linevi.ch{{ article.featured_image | thumbnail(POST_THUMBNAIL) }}"/>
-            {% elif OPEN_GRAPH_IMAGE %}
+        {% elif OPEN_GRAPH_IMAGE %}
             <meta property="og:image"
                   content="{{ MAIN_SITEURL }}/{{ OPEN_GRAPH_IMAGE }}"/>
-            {% endif %}
-	    {% endif %}
-	    {% endblock %}
+        {% endif %}
+    {% endif %}
+{% endblock %}
 
-	    {% block canonical_rel %}
-	    <link rel="canonical" href="{{ SITEURL }}/{{ article.url }}">
-	    {% endblock %}
+{% block canonical_rel %}
+    <link rel="canonical" href="{{ SITEURL }}/{{ article.url }}">
+{% endblock %}
 
 
-	    <ol class="breadcrumb">
-	      <li>
-		<a href="{{ SITEURL }}" title="{{ SITENAME }}"><i class="fa fa-home fa-lg"></i></a>
-	      </li>
-	      <li><a href="{{ SITEURL }}/{{ article.category.url }}"
-		     title="{{ article.category }}">{{ article.category }}</a>
-	      </li>
-	      <li class="active">{{ article.title }}</li>
-	    </ol>
+<ol class="breadcrumb">
+    <li>
+        <a href="{{ SITEURL }}" title="{{ SITENAME }}"><i class="fa fa-home fa-lg"></i></a>
+    </li>
+    <li><a href="{{ SITEURL }}/{{ article.category.url }}"
+           title="{{ article.category }}">{{ article.category }}</a>
+    </li>
+    <li class="active">{{ article.title }}</li>
+</ol>
 
-	    {% block content %}
-	    <section class="row single-article vert-offset-bottom-2">
-              <article class="col-xs-12 col-sm-12 col-lg-10 col-lg-offset-1 wow fadeIn">
-		<div class="col-lg-10 col-lg-offset-1 col-sm-12">
-                  <h1>{{ article.title }}</h1>
-                  {% include "includes/article_info.html" %}
-                  {{ article.content }}
-                  <footer class="meta">
+{% block content %}
+    <section class="row single-article vert-offset-bottom-2">
+        <article class="col-xs-12 col-sm-12 col-lg-10 col-lg-offset-1 wow fadeIn">
+            <div class="col-lg-10 col-lg-offset-1 col-sm-12">
+                <h1>{{ article.title }}</h1>
+                {% include "includes/article_info.html" %}
+                {{ article.content }}
+                <footer class="meta">
                     {% include "includes/taglist.html" %}
-                  </footer>
-		</div>
+                </footer>
+            </div>
+        </article>
+        <aside class="col-xs-12 col-sm-12 col-lg-10 col-lg-offset-1 wow fadeIn">
+            <div class="col-lg-10 col-lg-offset-1 col-sm-12">
+                <div class="addthis_sharing_toolbox"></div>
+            </div>
+        </aside>
+    </section>
+{% endblock %}
 
-		{% include 'includes/addthis.html' %}
-		{% include 'includes/shariff.html' %}
-
-              </article>
-	    </section>
-	    {% endblock %}
-
-	    {% block after_contnet %}
-	    <div class="after-content">
-              <div class="container">
-		<div class="row">
-                  <div class="col-sm-8">
+{% block after_contnet %}
+    <div class="after-content">
+        <div class="container">
+            <div class="row">
+                {% include "includes/related_articles.html" %}
+                <div class="col-sm-12">
                     {% include 'includes/comments.html' %}
-                  </div>
-                  {% include "includes/sidebar.html" %}
-		</div>
-              </div>
-	    </div>
-	    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
 
-	    {% block scripts %}
-	    {% if ADDTHIS_PROFILE %}
-            {% if ADDTHIS_DATA_TRACK_ADDRESSBAR|default(true) %}
-            <script type="text/javascript">var addthis_config = {"data_track_addressbar": true};</script>
-            {% endif %}
-            <script type="text/javascript"
-                    src="//s7.addthis.com/js/300/addthis_widget.js#pubid={{ ADDTHIS_PROFILE }}"></script>
-	    {% endif %}
-	    {% if SHARIFF|default(false) %}
-            <!-- add shariff support -->
-            <script src="{{ SITEURL }}/theme/js/shariff.min.js"></script>
-	    {% endif %}
-	    {% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript">
+        var addthis_share = {
+            url_transforms: {
+                add: {
+                    utm_campaign: '{{ article.slug }}',
+                    utm_content: 'share_buttons',
+                    utm_medium: 'post',
+                    utm_source: '{{code}}'
+                }
+            }
+        }
+    </script>
+{% endblock %}

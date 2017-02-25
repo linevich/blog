@@ -46,12 +46,12 @@
     {% include 'includes/twitter_cards.html' %}
 
     <link rel="stylesheet" href="{{ MAIN_SITEURL }}/theme/css/style.css" type="text/css"/>
-    {% if FEED_ALL_ATOM %}
-        <link href="{{ MAIN_SITEURL }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate"
+    {% if FEED_ATOM %}
+        <link href="{{ MAIN_SITEURL }}/{{ FEED_ATOM }}" type="application/atom+xml" rel="alternate"
               title="{{ SITENAME }} ATOM Feed"/>
     {% endif %}
-    {% if FEED_ALL_RSS %}
-        <link href="{{ MAIN_SITEURL }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate"
+    {% if FEED_RSS %}
+        <link href="{{ MAIN_SITEURL }}/{{ FEED_RSS }}" type="application/rss+xml" rel="alternate"
               title="{{ SITENAME }} RSS Feed"/>
     {% endif %}
 </head>
@@ -141,7 +141,10 @@
 <link rel="stylesheet" href="{{ MAIN_SITEURL }}/theme/css/fonts.css" type="text/css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 <link href="{{ MAIN_SITEURL }}/theme/css/pygments/{{ PYGMENTS_STYLE|default('solarizeddark') }}.css" rel="stylesheet">
-
 <script src="{{ MAIN_SITEURL }}/theme/js/main.js" async></script>
+{# Sharing scripts #}
+{% if article %}
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-569ee5e676ece814" async></script>
+{% endif %}
 </body>
 </html>
