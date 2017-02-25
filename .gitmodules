@@ -1,1 +1,4 @@
 
+[submodule "plugins"]
+	path = plugins
+	url = https://github.com/linevich/pelican-plugins

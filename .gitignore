@@ -12,7 +12,6 @@ pip-delete-this-directory.txt
 *.bak
 content/
 output/
-plugins/
 theme/node_modules/
 theme/static/
 theme/vendor/
