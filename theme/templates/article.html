@@ -33,6 +33,11 @@
         {% endfor %}
         {% if article.author %}
             <meta property="article:author" content="{{ article.author }}"/>
+        {% elif OPEN_GRAPH_AUTHOR %}
+            <meta property="article:author:first_name" content="{{ OPEN_GRAPH_AUTHOR['first_name'] }}"/>
+            <meta property="article:author:last_name" content="{{ OPEN_GRAPH_AUTHOR['last_name'] }}"/>
+            <meta property="article:author:username" content="{{ OPEN_GRAPH_AUTHOR['username'] }}"/>
+            <meta property="article:author:gender" content="{{ OPEN_GRAPH_AUTHOR['gender'] }}"/>
         {% elif AUTHOR %}
             <meta property="article:author" content="{{ AUTHOR }}"/>
         {% endif %}

@@ -61,6 +61,13 @@ JINJA_EXTENSIONS = [
     'jinja2.ext.with_',
 ]
 
+OPEN_GRAPH_AUTHOR = {
+    'first_name': 'Anton',
+    'last_name': ' Linevych',
+    'username': 'linevich',
+    'gender': 0
+}
+
 I18N_SUBSITES = {
     'en': {
         'SITENAME': 'Anton Linevych\'s blog',
