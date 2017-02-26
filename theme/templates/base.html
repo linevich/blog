@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="{% block html_lang %}{{ DEFAULT_LANG }}{% endblock %}"
-        {% if USE_OPEN_GRAPH %}
-      xmlns:og="http://ogp.me/ns#"
-      xmlns:fb="https://www.facebook.com/2008/fbml" {% endif %}>
+        {% if USE_OPEN_GRAPH %} prefix="og: http://ogp.me/ns# fb: http://www.facebook.com/2008/fbml" {% endif %}>
 <head>
     <meta name="google-site-verification" content="MCYojhllkhQDMPQHzPXIj1SgY7u8hFLMlQVy5L4nBbo"/>
     <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
@@ -144,7 +142,8 @@
 <script src="{{ MAIN_SITEURL }}/theme/js/main.js" async></script>
 {# Sharing scripts #}
 {% if article %}
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-569ee5e676ece814" async></script>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-569ee5e676ece814"
+            async></script>
 {% endif %}
 </body>
 </html>
