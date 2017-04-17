@@ -1,6 +1,8 @@
 @import "variables.less";
+@import "material_settings.less";
 @import "mixins.less";
 @import "custom-variables";
+@import "theme.less";
 // Reset and dependencies
 @import "../../vendor/bootstrap/less/normalize.less";
 @import "../../vendor/bootstrap/less/print.less";
@@ -56,10 +58,10 @@
 @import "type.less";
 @import "footer.less";
 //Material
-@import "../../vendor/bootstrap-material-design/less/bootstrap-material-design.less";
+@import "../../vendor/bootstrap-material-design/less/_mixins.less";
+@import "../../vendor/bootstrap-material-design/less/_shadows.less";
+@import '../../vendor/bootstrap-material-design/less/_core.less';
 @import "../../vendor/bootstrap-material-design/less/ripples.less";
+// Other libraries
 @import (less)"../../vendor/wowjs/css/libs/animate.css";
-@import "material_settings.less";
-
-
 @import (less) "../../vendor/jquery.gifplayer/dist/gifplayer.css";
