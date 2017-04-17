@@ -2,7 +2,7 @@
 {% block title %}{{ article.title|striptags }} - {{ SITENAME }}{% endblock %}
 {% block html_lang %}{{ article.lang }}{% endblock %}
 {% block meta %}
-{% if article.author %}
+  {% if article.author %}
     <meta name="author" content="{{ article.author }}"/>
   {% else %}
     <meta name="author" content="{{ AUTHOR }}"/>
@@ -67,34 +67,22 @@
             <time datetime="2017-02-13T00:00:00+02:00">13/02/17</time>
           </li>
           <li>
-            <a href="#">View English version</a>
+            {{ translations.main_to_secondary_lang(article) }}
           </li>
         </ul>
       </div>
-      <article class="single-page-content">
-        <h1>{{ article.title }}</h1>
+      <article class="single-page-content" itemscope itemtype="{{ article | schema_article_scope }}">
+        <h1 itemprop="name">{{ article.title }}</h1>
         {{ article.content }}
+        <footer class="meta">
+          {% include "includes/taglist.html" %}
+        </footer>
       </article>
+      <aside class="col-xs-12 col-sm-12 col-lg-10 col-lg-offset-1 wow fadeIn">
+        <div class="addthis_sharing_toolbox"></div>
+      </aside>
     </div>
   </div>
-
-  {#    <section class="row single-article vert-offset-bottom-2">#}
-  {#        <article class="col-xs-12 col-sm-12 col-lg-10 col-lg-offset-1 wow fadeIn">#}
-  {#            <div class="col-lg-10 col-lg-offset-1 col-sm-12">#}
-  {#                <h1>{{ article.title }}</h1>#}
-  {#                {% include "includes/article_info.html" %}#}
-  {#                {{ article.content }}#}
-  {#                <footer class="meta">#}
-  {#                    {% include "includes/taglist.html" %}#}
-  {#                </footer>#}
-  {#            </div>#}
-  {#        </article>#}
-  {#        <aside class="col-xs-12 col-sm-12 col-lg-10 col-lg-offset-1 wow fadeIn">#}
-  {#            <div class="col-lg-10 col-lg-offset-1 col-sm-12">#}
-  {#                <div class="addthis_sharing_toolbox"></div>#}
-  {#            </div>#}
-  {#        </aside>#}
-  {#    </section>#}
 {% endblock %}
 
 {% block after_contnet %}
