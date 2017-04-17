@@ -119,13 +119,59 @@ LANGUAGES = {
     'uk': 'Українська',
 }
 
+LANGUAGES_TRANSLATION_LINK_TEXT = {
+    'uk': 'Переглянути Українську версію',
+    'en': 'View English version'
+}
+
 
 def full_language_name(lang_code):
     return LANGUAGES[lang_code]
 
 
-JINJA_FILTERS = {
-    'full_language_name': full_language_name,
-}
+def translation_link_text(lang_code):
+    """
+    Return translation link text.
+
+    Example:
+        View English version of the article.
+
+    :param lang_code: language code
+    """
+    if lang_code:
+        if lang_code in LANGUAGES_TRANSLATION_LINK_TEXT.keys():
+            return LANGUAGES_TRANSLATION_LINK_TEXT[lang_code]
+        else:
+            if lang_code in LANGUAGES.keys():
+                return 'View {} version'.format(LANGUAGES[lang_code])
+
 
 TWITTER_CARDS = True
+
+# Schema.org
+SCHEMA_TECH_ARTICLE = 'http://schema.org/TechArticle'
+SCHEMA_BLOG_POST = 'http://schema.org/BlogPosting'
+
+SCHEMA_DEFAULT_ARTICLE_SCOPE = SCHEMA_TECH_ARTICLE
+
+
+def schema_article_scope(article):
+    """
+    Returns ``itemptype`` value for article scope.
+
+    :param article: article object.
+    """
+    scope = getattr(article, 'scope', None)
+    if scope in ['post', 'blog-post', 'blog_post']:
+        return SCHEMA_BLOG_POST
+    elif scope:
+        return scope
+    else:
+        return SCHEMA_DEFAULT_ARTICLE_SCOPE
+
+
+JINJA_FILTERS = {
+    'full_language_name': full_language_name,
+    'translation_link_text': translation_link_text,
+    'schema_article_scope': schema_article_scope,
+}
