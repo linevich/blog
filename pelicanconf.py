@@ -1,6 +1,6 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+
+import os
 
 SITENAME = 'Блоґ Антона Ліневича'
 SITEURL = '/'
@@ -48,6 +48,7 @@ PLUGINS = [
     'plugins.related_posts',
     'plugins.sitemap',
     'plugins.gzip_cache',
+    'plugins.org_reader',
     'pelican_youtube',
     # Disabled until I find the solution: https://github.com/getpelican/pelican-plugins/issues/650
     # 'plugins.feed_summary',
@@ -175,3 +176,7 @@ JINJA_FILTERS = {
     'translation_link_text': translation_link_text,
     'schema_article_scope': schema_article_scope,
 }
+
+ORG_READER_EMACS_LOCATION = '/usr/bin/emacs'
+ORG_READER_EMACS_SETTINGS = os.path.abspath('lisp/config.el')
+ORG_READER_BACKEND = "'pelican-html"
