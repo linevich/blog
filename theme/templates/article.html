@@ -64,7 +64,7 @@
       <div class="article-meta-header">
         <ul class="list-inline">
           <li>
-            <time datetime="2017-02-13T00:00:00+02:00">13/02/17</time>
+            <time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
           </li>
           <li>
             {{ translations.main_to_secondary_lang(article) }}
