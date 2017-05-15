@@ -19,7 +19,7 @@ See http://pygments.org/ for details"
   ;; Processing
   (shell-command-to-string (format "%s -l \"%s\" -f html %s"
                                    pygments-path
-                                   (org-element-property :language code)
+                                   (or (org-element-property :language code)
+                                       "")
                                    temp-source-file)))
-
 (provide 'pelican-html)

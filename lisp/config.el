@@ -14,10 +14,9 @@
 
 ;;; Org mode settings
 
-(use-package org :ensure t)
-(use-package htmlize :ensure t)
+;;(use-package org :ensure t)
+;;(use-package htmlize :ensure t)
 
 ;;; Loading custom backend
 (add-to-list 'load-path "lisp/")
-;;(load-library "pelican-html.el") ;; Backend path is relative to Makefile
 (require 'pelican-html)
