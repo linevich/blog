@@ -48,7 +48,7 @@ PLUGINS = [
     'plugins.related_posts',
     'plugins.sitemap',
     'plugins.gzip_cache',
-    'plugins.org_reader',
+    'org_reader',
     'pelican_youtube',
     # Disabled until I find the solution: https://github.com/getpelican/pelican-plugins/issues/650
     # 'plugins.feed_summary',
