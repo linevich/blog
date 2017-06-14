@@ -11,7 +11,6 @@
 
 (setq use-package-verbose t)
 (require 'use-package)
-
 ;;; Org mode settings
 
 ;;(use-package org :ensure t)
