@@ -1,26 +1,30 @@
-Babel==2.3.4
-beautifulsoup4==4.5.1
+Babel==2.4.0
+beautifulsoup4==4.6.0
 blinker==1.4
-docutils==0.12
+docutils==0.13.1
 feedgenerator==1.9
 html5lib==0.999999999
 htmlmin==0.1.10
-Jinja2==2.8
-joblib==0.9.4
-lxml==3.6.4
-Markdown==2.6.7
+Jinja2==2.9.6
+joblib==0.11
+lxml==3.8.0
+Markdown==2.6.8
 -e git+https://github.com/sander76/markdown-figures.git@104ba1ca1913333ccc0b226cf0f4ff04ae0e060d#egg=markdown_figures
-MarkupSafe==0.23
-pelican==3.6.3
-pelican-advthumbnailer==0.6.0
+MarkupSafe==1.0
+olefile==0.44
+-e git+https://github.com/linevich/org_reader@355e3af1f8da2feeed728960417ffef0fb7c39bc#egg=org_reader
+pelican==3.7.1
+pelican-advthumbnailer==0.7.0
 pelican-autostatic==0.2.2
 pelican-minify==0.9
 pelican-youtube==0.2.0
-Pillow==3.3.1
-Pygments==2.1.3
-python-dateutil==2.5.3
-pytz==2016.6.1
+Pillow==4.1.1
+pkg-resources==0.0.0
+Pygments==2.2.0
+python-dateutil==2.6.0
+pytz==2017.2
 six==1.10.0
-Unidecode==0.4.19
-webencodings==0.5
--e git+https://github.com/linevich/org_reader#egg=org_reader
+smartypants==2.0.0
+typogrify==2.0.7
+Unidecode==0.4.20
+webencodings==0.5.1

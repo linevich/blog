@@ -1,5 +1,4 @@
 from __future__ import unicode_literals
-
 import os
 
 SITENAME = 'Блоґ Антона Ліневича'
@@ -54,13 +53,14 @@ PLUGINS = [
     # 'plugins.feed_summary',
     'minify',
     'plugins.simple_footnotes',
-
 ]
 
-JINJA_EXTENSIONS = [
-    'jinja2.ext.i18n',
-    'jinja2.ext.with_',
-]
+JINJA_ENVIRONMENT = {
+    'extensions': [
+        'jinja2.ext.i18n',
+        'jinja2.ext.with_',
+    ],
+}
 
 OPEN_GRAPH_AUTHOR = {
     'first_name': 'Anton',
