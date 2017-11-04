@@ -10,10 +10,6 @@ TIMEZONE = 'Europe/Kiev'
 
 DEFAULT_LANG = 'uk'
 
-CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
-FEED_RSS = '%s/rss.xml' % DEFAULT_LANG
-FEED_USE_SUMMARY = True
-
 # Blogroll
 LINKS = (
     ('Pelican', 'http://getpelican.com/'),
@@ -39,19 +35,22 @@ STATIC_PATHS = [
 POST_THUMBNAIL = '623x300'
 RELATED_POST_THUMBNAIL = '360x173'
 
+PRODUCTION_ONLY_PLUGINS = [
+    'plugins.gzip_cache',
+    'minify',
+    'plugins.sitemap',
+]
+
 PLUGINS = [
     'plugins.i18n_subsites',
     'plugins.representative_image',
     'autostatic',  # Easily staticfiles management
     'advthumbnailer',  # Generating thumbnails
     'plugins.related_posts',
-    'plugins.sitemap',
-    'plugins.gzip_cache',
     'org_reader',
     'pelican_youtube',
     # Disabled until I find the solution: https://github.com/getpelican/pelican-plugins/issues/650
     # 'plugins.feed_summary',
-    'minify',
     'plugins.simple_footnotes',
 ]
 
@@ -74,8 +73,6 @@ I18N_SUBSITES = {
         'SITENAME': 'Anton Linevych\'s blog',
         'TWITTER_USERNAME': 'linevich_en',
         'AUTHOR': 'Anton Linevych',
-        'FEED_RSS': 'en/rss.xml',
-        'CATEGORY_FEED_RSS': 'feeds/%s.rss.xml',
     },
     'uk': {
         'SITENAME': SITENAME,
