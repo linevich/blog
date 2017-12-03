@@ -85,7 +85,7 @@ I18N_GETTEXT_LOCALEDIR = 'locales'
 I18N_GETTEXT_DOMAIN = 'messages'
 
 SHOW_ARTICLE_AUTHOR = False
-CC_LICENSE = 'cc-by-nc'
+CC_LICENSE = 'cc-by'
 
 DISQUS_SITENAME = 'linevich'
 RELATED_POSTS_MAX = 5
