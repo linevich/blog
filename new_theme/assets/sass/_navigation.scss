@@ -1,0 +1,46 @@
+.topNav {
+  max-width: 100%;
+  line-height: 1;
+  padding: 0 $topNavHorizontalPadding;
+  margin: 0 auto 15px;
+  height: $topNavHeight;
+  font-family: $base-font-family;
+  font-size: rem($topNavFontSize);
+  background-color: $topNavBg;
+  color: $topNavColor;
+  font-weight: $base-font-weight;
+
+  &__title {
+    display: inline;
+    float: left;
+    padding: rem($topNavVerticalPadding) $topNavHorizontalPadding rem($topNavVerticalPadding) 0;
+    font-weight: 700;
+  }
+  &__menu {
+    display: inline;
+    margin-top: 0;
+    padding: 0;
+
+    &--left {
+      float: left;
+    }
+    &--right {
+      float: right;
+    }
+  }
+  .topNav__menuItem {
+    list-style-type: none;
+    margin: 0;
+    padding: rem($topNavVerticalPadding) $topNavMenuItemHorizontalPadding;
+    display: inline-block;
+
+    &--active {
+      background-color: $topNavBgActive;
+    }
+
+    * {
+      text-decoration: none;
+      color: $topNavColor;
+    }
+  }
+}

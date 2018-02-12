@@ -1,0 +1,29 @@
+$mainColor: #607d8b;
+
+$page-content-width: 760px;
+
+/* == Base font settings == */
+$base-font-family: Roboto, Helvetica, Arial, sans-serif;
+$code-font-family: 'Roboto Mono', monospace;
+$base-font-size: 16px;
+$base-font-weight: 400;
+
+$h1-font-size: 36px;
+$h2-font-size: $h1-font-size * 0.7;
+$h3-font-size: $h1-font-size * 0.6;
+$h4-font-size: $h1-font-size * 0.55;
+$h5-font-size: $base-font-size;
+$h6-font-size: $base-font-size;
+$code-font-size: $base-font-size * 0.9;
+
+$code-block-padding: 25px;
+
+/* == Top bar navigation == */
+$topNavFontSize: 14px;
+$topNavHeight: 60px;
+$topNavVerticalPadding: ($topNavHeight - $topNavFontSize)/2;
+$topNavHorizontalPadding: 20px;
+$topNavMenuItemHorizontalPadding: 10px;
+$topNavColor: #ffffff;
+$topNavBg: $mainColor;
+$topNavBgActive: #ffffff2b;

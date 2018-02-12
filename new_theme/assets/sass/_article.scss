@@ -1,0 +1,15 @@
+.article {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+  line-height: 1.75;
+
+  picture,
+  img,
+  figure {
+    margin: 50px auto;
+    display: block;
+    max-width: 100%;
+  }
+}
