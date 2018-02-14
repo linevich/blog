@@ -1,15 +1,18 @@
 .topNav {
-  max-width: 100%;
+  @include make-row();
+  @extend %md-shadow-2;
   line-height: 1;
   padding: 0 $topNavHorizontalPadding;
-  margin: 0 auto 15px;
-  height: $topNavHeight;
+  height: rem($topNavHeight);
   font-family: $base-font-family;
   font-size: rem($topNavFontSize);
   background-color: $topNavBg;
   color: $topNavColor;
   font-weight: $base-font-weight;
 
+  &__container {
+    @include make-row($large-screen-min);
+  }
   &__title {
     display: inline;
     float: left;
@@ -21,6 +24,10 @@
     margin-top: 0;
     padding: 0;
 
+    @media (max-width: $small-screen-min) {
+      display: none;
+    }
+
     &--left {
       float: left;
     }
@@ -28,19 +35,23 @@
       float: right;
     }
   }
-  .topNav__menuItem {
+  &__menuItem {
     list-style-type: none;
-    margin: 0;
-    padding: rem($topNavVerticalPadding) $topNavMenuItemHorizontalPadding;
     display: inline-block;
+    margin: 0;
 
     &--active {
-      background-color: $topNavBgActive;
+      background-color: transparentize($topNavActiveBg, 0.83);
+    }
+    &:hover {
+      background-color: transparentize($topNavActiveBg, 0.90);
     }
 
-    * {
-      text-decoration: none;
-      color: $topNavColor;
-    }
+  }
+  &__menuItemLink {
+    text-decoration: none;
+    color: $topNavColor;
+    padding: rem($topNavVerticalPadding) $topNavMenuItemHorizontalPadding;
+    display: inline-block;
   }
 }
