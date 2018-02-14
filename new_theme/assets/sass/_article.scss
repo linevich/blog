@@ -1,15 +1,77 @@
+.articleOuter {
+  background-color: #ffffff;
+}
+
 .article {
   max-width: 760px;
   margin-left: auto;
   margin-right: auto;
-  padding: 15px;
+
+  padding: 25px;
   line-height: 1.75;
 
   picture,
   img,
   figure {
-    margin: 50px auto;
+    margin: rem(50px) auto;
     display: block;
     max-width: 100%;
+  }
+
+  &__topMeta {
+    font-weight: bold;
+    font-size: rem($small-font-size);
+  }
+  &__publicationDate {
+    margin-right: rem(15px);
+  }
+  &__translationLink {
+    text-transform: uppercase;
+    color: $mainColor;
+    text-decoration: none;
+  }
+}
+
+.afterArticle {
+  @include make-row($page-content-width)
+}
+
+.comments {
+  margin: 15px 0;
+  background: none !important;
+  textarea, .textarea, input {
+    background: none !important;
+  }
+}
+
+$tags-bg: #9e9e9e;
+$tags-font-size: $small-font-size;
+
+.tags {
+  list-style-type: none;
+  display: inline;
+
+  &__tagItem {
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+    margin-left: 10px;
+  }
+
+  &__tagLink {
+    padding: rem($tags-font-size/2) rem($tags-font-size);
+    text-decoration: none;
+    color: #ffffff;
+    font-size: rem($tags-font-size);
+    line-height: 1;
+
+    background-color: $tags-bg;
+
+    &:hover {
+      background-color: darken($tags-bg, 30);
+    }
+    &:before{
+      content: '#';
+    }
   }
 }
