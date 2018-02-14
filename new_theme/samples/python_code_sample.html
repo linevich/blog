@@ -1,0 +1,20 @@
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_all_fields_from_form</span><span class="p">(</span><span class="n">instance</span><span class="p">):</span>
+    <span class="sd">""""</span>
+<span class="sd">    Return names of all available fields from given Form instance.</span>
+
+<span class="sd">    :arg instance: Form instance</span>
+<span class="sd">    :returns list of field names</span>
+<span class="sd">    :rtype: list</span>
+<span class="sd">    """</span>
+
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">instance</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'declared_fields'</span> <span class="ow">or</span> <span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'base_fields'</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">instance</span><span class="o">.</span><span class="n">Meta</span><span class="p">,</span> <span class="s1">'exclude'</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="n">field</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">instance</span><span class="o">.</span><span class="n">Meta</span><span class="o">.</span><span class="n">exclude</span><span class="p">:</span>
+                        <span class="n">fields</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">field</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">fields</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">field</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">fields</span>
+</pre></div>
