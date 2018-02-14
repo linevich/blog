@@ -1,0 +1,25 @@
+@mixin make-row($size: 100%) {
+  position: relative;
+  margin: 0 auto;
+  max-width: $size;
+}
+
+%md-shadow-1 {
+  box-shadow: $md-shadow-1;
+}
+
+%md-shadow-2 {
+  box-shadow: $md-shadow-2;
+}
+
+%md-shadow-3 {
+  box-shadow: $md-shadow-3;
+}
+
+%md-shadow-4 {
+  box-shadow: $md-shadow-4;
+}
+
+%md-shadow-4 {
+  box-shadow: $md-shadow-4;
+}
