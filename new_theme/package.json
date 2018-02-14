@@ -1,0 +1,14 @@
+{
+  "name": "blog_theme",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "author": "Anton Linevych",
+  "devDependencies": {
+    "sass-material-colors": "^0.0.5",
+    "webpack": "^3.11.0"
+  },
+  "dependencies": {
+    "normalize-scss": "^7.0.1"
+  }
+}
