@@ -1,29 +1,47 @@
-* {
+html {
   font-family: $base-font-family;
+
+  @media (max-width: $small-screen-min) {
+    font-size: 14px;
+  }
+  @media (min-width: $small-screen-min) {
+    font-size: 15px;
+  }
+  @media (min-width: $medium-screen-min) {
+    font-size: $base-font-size;
+  }
 }
+
+$headings-line-height: 1.1;
 
 h1 {
   font-size: rem($h1-font-size);
+  line-height: $headings-line-height;
 }
 
 h2 {
   font-size: rem($h1-font-size * 0.7);
+  line-height: $headings-line-height;
 }
 
 h3 {
   font-size: rem($h1-font-size * 0.6);
+  line-height: $headings-line-height;
 }
 
 h4 {
   font-size: rem($h1-font-size * 0.55);
+  line-height: $headings-line-height;
 }
 
 h5 {
   font-size: rem($base-font-size);
+  line-height: $headings-line-height;
 }
 
 h6 {
   font-size: rem($base-font-size);
+  line-height: $headings-line-height;
   color: lighten(#000000, 40);
 }
 
