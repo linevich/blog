@@ -1,0 +1,25 @@
+%responsive-img {
+  display: inline-block;
+  max-width: 100%;
+}
+
+picture {
+  @extend %responsive-img;
+}
+
+img {
+  @extend %responsive-img;
+}
+
+figure {
+  @extend %responsive-img;
+  img, picture {
+    margin: 0;
+  }
+
+  figcaption {
+    margin-top: 15px;
+    font-size: rem($base-font-size);
+    text-align: center;
+  }
+}
