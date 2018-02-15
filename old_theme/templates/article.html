@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% block title %}{{ article.title|striptags }} - {{ SITENAME }}{% endblock %}
+{% block html_lang %}{{ article.lang }}{% endblock %}
+{% block meta %}
+  {% if article.author %}
+    <meta name="author" content="{{ article.author }}"/>
+  {% else %}
+    <meta name="author" content="{{ AUTHOR }}"/>
+  {% endif %}
+  {% if article.tags %}
+    <meta name="keywords" content="{{ article.tags|join(',')|striptags }}"/>
+  {% endif %}
+  {% if article.summary %}
+    <meta name="description" content="{{ article.summary|striptags|escape }}"/>
+  {% endif %}
+{% endblock %}
+{% block opengraph %}
+  {% if USE_OPEN_GRAPH %}
+    {% if OPEN_GRAPH_FB_APP_ID %}
+      <meta property="fb:app_id" content="{{ OPEN_GRAPH_FB_APP_ID }}"/>
+    {% endif %}
+    <meta property="og:site_name" content="{{ SITENAME }}"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="{{ article.title|striptags|escape }}"/>
+    <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}"/>
+    <meta property="og:description" content="{{ article.summary|striptags|escape }}"/>
+    <meta property="article:published_time" content="{{ article.date.strftime(" %Y-%m-%d") }}"/>
+    {% if article.category %}
+      <meta property="article:section" content="{{ article.category }}"/>
+    {% endif %}
+    {% for tag in article.tags %}
+      <meta property="article:tag" content="{{ tag }}"/>
+    {% endfor %}
+    {% if article.author %}
+      <meta property="article:author" content="{{ article.author }}"/>
+    {% elif OPEN_GRAPH_AUTHOR %}
+      <meta property="article:author:first_name" content="{{ OPEN_GRAPH_AUTHOR['first_name'] }}"/>
+      <meta property="article:author:last_name" content="{{ OPEN_GRAPH_AUTHOR['last_name'] }}"/>
+      <meta property="article:author:username" content="{{ OPEN_GRAPH_AUTHOR['username'] }}"/>
+      <meta property="article:author:gender" content="{{ OPEN_GRAPH_AUTHOR['gender'] }}"/>
+    {% elif AUTHOR %}
+      <meta property="article:author" content="{{ AUTHOR }}"/>
+    {% endif %}
+    {% if article.og_image %}
+      <meta property="og:image"
+            content="https://linevi.ch/{{ article.og_image }}"/>
+    {% elif article.featured_image %}
+      <meta property="og:image"
+            content="https://linevi.ch{{ article.featured_image | thumbnail(POST_THUMBNAIL) }}"/>
+    {% elif OPEN_GRAPH_IMAGE %}
+      <meta property="og:image"
+            content="{{ MAIN_SITEURL }}/{{ OPEN_GRAPH_IMAGE }}"/>
+    {% endif %}
+  {% endif %}
+{% endblock %}
+
+{% block canonical_rel %}
+  <link rel="canonical" href="{{ SITEURL }}/{{ article.url }}">
+{% endblock %}
+
+{% block content_container %}
+  <div class="white-wrapper vert-offset-bottom-3">
+    <div class="container single-page-container">
+      <div class="article-meta-header">
+        <ul class="list-inline">
+          <li>
+            <time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
+          </li>
+          <li>
+            {{ translations.main_to_secondary_lang(article) }}
+          </li>
+        </ul>
+      </div>
+      <article class="single-page-content" itemscope itemtype="{{ article | schema_article_scope }}">
+        <h1 itemprop="name">{{ article.title }}</h1>
+        {{ article.content }}
+        <footer class="meta">
+          {% include "includes/taglist.html" %}
+          <aside class="vert-offset-top-1">
+            <div class="addthis_sharing_toolbox"></div>
+          </aside>
+        </footer>
+      </article>
+    </div>
+  </div>
+{% endblock %}
+
+{% block after_contnet %}
+  <div class="after-content">
+    <div class="container">
+      <div class="row">
+        {% include "includes/related_articles.html" %}
+        <div class="col-sm-12">
+          {% include 'includes/comments.html' %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+
+{% block scripts %}
+  <script type="text/javascript">
+      var addthis_share = {
+          url_transforms: {
+              add: {
+                  utm_campaign: '{{ article.slug }}',
+                  utm_content: 'share_buttons',
+                  utm_medium: 'post',
+                  utm_source: '{{code}}'
+              }
+          }
+      }
+  </script>
+{% endblock %}

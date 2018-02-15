@@ -1,0 +1,21 @@
+{% macro translations_for(article) %}
+  {% if article.translations -%}
+    {% for translation in article.translations -%}
+      <a href="{{ SITEURL }}/{{ translation.url }}">{{ translation.lang | full_language_name }}</a>
+    {%- endfor %}
+  {% endif -%}
+{% endmacro %}
+
+{% macro url_if_translated(object) %}
+  {% if object.translations -%}
+    {{ object.url }}
+  {%- endif %}
+{% endmacro %}
+
+{% macro main_to_secondary_lang(content, content_class='article__translationLink') %}
+  {% for translation in content.translations -%}
+    <a href="{{ SITEURL }}/{{ translation.url }}" class="{{ content_class }}">
+      {{ translation.lang | translation_link_text }}
+    </a>
+  {%- endfor %}
+{% endmacro %}
