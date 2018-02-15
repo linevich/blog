@@ -1,0 +1,34 @@
+%table-cell {
+  padding: rem($table-cell-padding);
+  box-sizing: border-box;
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+  max-width: 100%;
+  width: 100%;
+  padding: 0 rem($table-cell-padding);
+  @extend %md-shadow-1;
+
+  thead {
+    position: relative;
+    @extend %md-shadow-1;
+
+    th {
+      @extend %table-cell;
+      white-space: nowrap;
+    }
+  }
+
+  tbody {
+    td {
+      @extend %table-cell;
+    }
+    tr {
+      &:not(:last-child) {
+        border-bottom: 1px $table-border-color solid;
+      }
+    }
+  }
+}
