@@ -12,7 +12,10 @@ html {
   }
 }
 
-$headings-line-height: 1.1;
+a {
+  color: $mainColor;
+  text-decoration: none;
+}
 
 h1 {
   font-size: rem($h1-font-size);
