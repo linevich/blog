@@ -177,3 +177,5 @@ JINJA_FILTERS = {
 ORG_READER_EMACS_LOCATION = '/usr/bin/emacs'
 ORG_READER_EMACS_SETTINGS = os.path.abspath('lisp/config.el')
 ORG_READER_BACKEND = "'pelican-html"
+GOOGLE_SITE_VERIFICATION = 'MCYojhllkhQDMPQHzPXIj1SgY7u8hFLMlQVy5L4nBbo'
+ADDTHIS_BUTTONS_URL = '//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-569ee5e676ece814'
