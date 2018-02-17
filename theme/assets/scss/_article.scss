@@ -49,13 +49,16 @@
 
 .tags {
   list-style-type: none;
-  display: inline;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
 
   &__tagItem {
     cursor: pointer;
     display: inline-block;
     float: left;
     margin-left: 10px;
+    margin-top: 10px;
   }
 
   &__tagLink {
