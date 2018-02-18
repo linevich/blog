@@ -1,0 +1,13 @@
+{#
+  As soon as Pelican doesn't have built-in content type detection system, here is the temporary workaround.
+
+  Usage:
+
+    {% import 'macro/content_type.html' as ct with context %}
+    {{ ct.get_content_type() }}
+#}
+
+{% macro get_content_type() %}
+  {% set ct = article|default(None) or page|default(None) or category|default(None) or tag|default(None) %}
+  {{ ct|default(None) }}
+{% endmacro %}
