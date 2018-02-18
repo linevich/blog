@@ -1,51 +1,46 @@
-<div class="articleOuter">
-  <article class="article">
-    <header>
-      <div class="article__topMeta">
-        <time class="article__publicationDate" datetime="{{ article.date.isoformat() }}">
-          {{ article.locale_date }}
-        </time>
-        {{ translations.main_to_secondary_lang(article) }}
-      </div>
-      <h1 class="article__title">{{ article.title }}</h1>
-    </header>
-    <div class="article__content">{{ article.content }}</div>
-    <footer>
-      <!-- List of used sources -->
-      {% if article.sources %}
-        <h2>Used sources</h2>
-        <ul class="article__sourcesList">
-          <li><a href="https://example.com/1">First Source URL address</a></li>
-          <li><a href="https://example.com/2">Second Source URL address</a></li>
-        </ul>
-      {% endif %}
-      <!-- List of tags -->
-      {% if article.tags %}
-        <ul class="tags">
-          {% for tag in article.tags %}
-            <li class="tags__tagItem"><a class="tags__tagLink" href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a></li>
-          {% endfor %}
-        </ul>
-      {% endif %}
+{% extends "base.html" %}
+{% import "macro/translations.html" as translations %}
 
-      <!-- Sharing buttons -->
-    </footer>
-  </article>
-</div>
-<aside class="afterArticle">
-  <div id="commento" class="comments"></div>
-</aside>
-<!--
-<aside class="afterArticle">
-  <div class="authorInfo">
-    <picture class="authorInfo__avatar">
-      <source media="(min-width: 640px)" srcset="assets/img/anton_640.jpg">
-      <source media="(max-width: 360px)" srcset="assets/img/anton_360.jpg">
-      <img src="assets/img/anton.jpg" alt="Author">
-    </picture>
-    <div class="authorInfo__name">Anton Linevych</div>
-    <div class="authorInfo__bio">FullStack Python Developer at @softformance. Emacs fan and
-      Linux lover. Interested in TeX and routine automation.
-    </div>
+{% block main_css %}
+  <link rel="stylesheet" href="{{ MAIN_SITEURL }}/theme/css/article-style.css" type="text/css"/>
+{% endblock %}
+
+{% block content %}
+  <div class="articleOuter">
+    <article class="article">
+      <header>
+        <div class="article__topMeta">
+          <time class="article__publicationDate" datetime="{{ article.date.isoformat() }}">
+            {{ article.locale_date }}
+          </time>
+          {{ translations.main_to_secondary_lang(article, class="article__translationLink") }}
+        </div>
+        <h1 class="article__title">{{ article.title }}</h1>
+      </header>
+      <div class="article__content">{{ article.content }}</div>
+      <footer>
+        <!-- List of used sources -->
+        {% if article.sources %}
+          <h2>Used sources</h2>
+          <ul class="article__sourcesList">
+            <li><a href="https://example.com/1">First Source URL address</a></li>
+            <li><a href="https://example.com/2">Second Source URL address</a></li>
+          </ul>
+        {% endif %}
+        <!-- List of tags -->
+        {% if article.tags %}
+          <ul class="tags">
+            {% for tag in article.tags %}
+              <li class="tags__tagItem"><a class="tags__tagLink" href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a></li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+
+        <!-- Sharing buttons -->
+      </footer>
+    </article>
   </div>
-</aside>-->
+  <aside class="afterArticle">
+    <div id="commento" class="comments"></div>
+  </aside>
+{% endblock %}
