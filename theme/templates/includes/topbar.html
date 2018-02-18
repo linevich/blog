@@ -1,14 +1,43 @@
+{% macro menu_item(url, title, active=False) %}
+  <li class="topNav__menuItem {% if active -%}topNav__menuItem--active{%- endif %}">
+    <a href="{{ url }}" class="topNav__menuItemLink">{{ title }}</a>
+  </li>
+{% endmacro %}
+
 <nav class="topNav">
   <div class="topNav__container">
-    <span class="topNav__title">Anton Linevych's Blog</span>
+    <a class="topNav__title" href="/" title="{{ SITENAME }}">{{ SITENAME }}</a>
     <menu class="topNav__menu topNav__menu--left">
-      <li class="topNav__menuItem topNav__menuItem--active"><a href="#1" class="topNav__menuItemLink">Home</a>
-      <li class="topNav__menuItem"><a href="#2" class="topNav__menuItemLink">About me</a>
+      {% for title, link in MENUITEMS -%}
+        {{ menu_item(link, title) }}
+      {%- endfor %}
+      {# List of categories #}
+      {% if DISPLAY_CATEGORIES_ON_MENU -%}
+        {% for cat, null in categories -%}
+          {{ menu_item('%s/%s'|format(SITEURL, cat.url), cat, active=(cat==category)) }}
+        {%- endfor %}
+      {%- endif %}
     </menu>
     <menu class="topNav__menu topNav__menu--right">
-      <li class="topNav__menuItem"><a href="#1" class="topNav__menuItemLink">Archive</a>
-      <li class="topNav__menuItem"><a href="#2" class="topNav__menuItemLink">uk</a>
-      <li class="topNav__menuItem"><a href="#3" class="topNav__menuItemLink">en</a>
+      {# List of pages #}
+      {% if DISPLAY_PAGES_ON_MENU %}
+        {% for p in PAGES %}
+          {{ menu_item('%s/%s'.format(SITEURL, p.url), p.menulabel|default(p.title), active=(p==page)) }}
+        {% endfor %}
+      {% endif %}
+      {# Link to the Archives page #}
+      {{ menu_item('%s/%s'|format(SITEURL,ARCHIVES_URL|default('archives.html')), 'Archives') }}
+
+      {# Language Selectors #}
+      {% if lang_siteurls %}
+        {% import 'macro/translations.html' as translations with context %}
+        {% import 'macro/content_type.html' as ct with context %}
+        {% for lang, url in lang_siteurls.items() %}
+          {% if lang != DEFAULT_LANG %} {# <-- Don't show current language in language selector list #}
+            {{ menu_item('%s/%s'|format(url, translations.url_if_translated(ct.get_content_type())), lang|upper) }}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
     </menu>
   </div>
 </nav>
