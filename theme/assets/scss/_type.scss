@@ -47,27 +47,3 @@ h6 {
   line-height: $headings-line-height;
   color: lighten(#000000, 40);
 }
-
-/* Pygments.css styles */
-
-.highlight, code {
-  @media (max-width: $page-content-width) {
-    max-width: $page-content-width;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
-    display: flex;
-  }
-  pre {
-    @media (max-width: $page-content-width) {
-      min-width: $page-content-width - $code-block-padding * 2;
-      display: inline-block;
-    }
-    padding: $code-block-padding;
-  }
-
-  & * {
-    font-family: $code-font-family;
-    font-size: rem($code-font-size);
-  }
-}

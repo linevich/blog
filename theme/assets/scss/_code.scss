@@ -1,0 +1,32 @@
+code {
+  background-color: $code-block-bg;
+  color: $code-color;
+  font-size: rem($code-font-size);
+  font-family: $code-font-family;
+  padding: rem(3px) rem(5px);
+}
+
+/* Pygments.css styles */
+.highlight {
+  background-color: $code-block-bg;
+  max-width: $page-content-width;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  display: flex;
+  pre {
+    @media (max-width: $page-content-width) {
+      min-width: $page-content-width;
+      display: inline-block;
+    }
+    min-width: $page-content-width - $code-block-padding * 2;
+    padding: $code-block-padding;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  & * {
+    font-family: $code-font-family;
+    font-size: rem($code-font-size);
+  }
+}

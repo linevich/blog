@@ -21,9 +21,12 @@ $h3-font-size: $h1-font-size * 0.6;
 $h4-font-size: $h1-font-size * 0.55;
 $h5-font-size: $base-font-size;
 $h6-font-size: $base-font-size;
-$code-font-size: $base-font-size * 0.9;
 
+/* == Code ==*/
+$code-font-size: $base-font-size * 0.9;
+$code-block-bg: #002b36;
 $code-block-padding: 25px;
+$code-color: #839496;
 
 /* == Top bar navigation == */
 $topNavFontSize: $small-font-size;
