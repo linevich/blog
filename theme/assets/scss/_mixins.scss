@@ -23,3 +23,8 @@
 %md-shadow-4 {
   box-shadow: $md-shadow-4;
 }
+
+@mixin make-full-width($width){
+  margin-left: calc(-100vw / 2 + #{$width} / 2);
+  margin-right: calc(-100vw / 2 + #{$width} / 2);
+}
