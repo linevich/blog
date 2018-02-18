@@ -20,7 +20,7 @@
   {% block meta %}
     <meta name="author" content="{{ AUTHOR }}"/>
   {% endblock %}
-  <link rel="stylesheet" href="{{ MAIN_SITEURL }}/theme/style.css" type="text/css"/>
+  {% block main_css%}<link rel="stylesheet" href="{{ MAIN_SITEURL }}/theme/css/style.css" type="text/css"/>{% endblock %}
 </head>
 <body>
 {% block header %}{% include "includes/topbar.html" %}{% endblock %}
@@ -34,15 +34,5 @@
 {#{% include 'includes/ga.html' %}#}
 
 {% block scripts %}{% endblock %}
-{# Unimportant css files placed here to speedup page loading #}
-
-<link rel="stylesheet" href="{{ MAIN_SITEURL }}/theme/css/fonts.css" type="text/css">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-<link href="{{ MAIN_SITEURL }}/theme/css/pygments/{{ PYGMENTS_STYLE|default('solarizeddark') }}.css" rel="stylesheet">
-<script src="{{ MAIN_SITEURL }}/theme/js/main.js" async></script>
-{# Sharing scripts #}
-{% if article and ADDTHIS_BUTTONS_URL %}
-  <script type="text/javascript" src="{{ ADDTHIS_BUTTONS_URL }}" async></script>
-{% endif %}
 </body>
 </html>
