@@ -16,3 +16,4 @@ theme/node_modules/
 theme/static/
 old_theme/*
 *.db
+test_content/
