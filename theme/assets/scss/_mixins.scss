@@ -4,6 +4,11 @@
   max-width: $size;
 }
 
+@mixin make-full-width($width) {
+  margin-left: calc(-100vw / 2 + #{$width} / 2);
+  margin-right: calc(-100vw / 2 + #{$width} / 2);
+}
+
 %md-shadow-1 {
   box-shadow: $md-shadow-1;
 }
@@ -24,7 +29,13 @@
   box-shadow: $md-shadow-4;
 }
 
-@mixin make-full-width($width){
-  margin-left: calc(-100vw / 2 + #{$width} / 2);
-  margin-right: calc(-100vw / 2 + #{$width} / 2);
+%responsive-img {
+  display: inline-block;
+  max-width: 100%;
+}
+
+%table-cell {
+  padding: rem($table-cell-padding);
+  box-sizing: border-box;
+  text-align: left;
 }
