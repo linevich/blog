@@ -6,7 +6,7 @@ SITEURL = '/'
 
 PATH = 'content'
 
-TIMEZONE = 'Europe/Kiev'
+TIMEZONE = 'Europe/Bratislava'
 
 DEFAULT_LANG = 'uk'
 
@@ -25,7 +25,6 @@ DEFAULT_PAGINATION = 10
 # RELATIVE_URLS = True
 
 THEME = 'theme'
-CUSTOM_CSS = 'theme/css/bootstrap-material-design.css'
 STATIC_PATHS = [
     'images',
     'favicon',
@@ -58,13 +57,14 @@ JINJA_ENVIRONMENT = {
     'extensions': [
         'jinja2.ext.i18n',
         'jinja2.ext.with_',
+        'jinja2.ext.loopcontrols',
     ],
 }
 
 OPEN_GRAPH_AUTHOR = {
     'first_name': 'Anton',
     'last_name': ' Linevych',
-    'username': 'linevich',
+    'username': 'linevych',
     'gender': 0
 }
 
@@ -87,7 +87,6 @@ I18N_GETTEXT_DOMAIN = 'messages'
 SHOW_ARTICLE_AUTHOR = False
 CC_LICENSE = 'cc-by'
 
-DISQUS_SITENAME = 'linevich'
 RELATED_POSTS_MAX = 5
 GOOGLE_ANALYTICS_UNIVERSAL = 'UA-43408213-3'
 DISPLAY_CATEGORIES_ON_MENU = True
