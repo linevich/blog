@@ -1,22 +1,10 @@
-// Third-party libs
 @import "../../node_modules/normalize-scss/sass/normalize";
 @import "../../node_modules/sass-material-colors/sass/sass-material-colors";
 
 @include normalize();
-
-// Core
 @import "variables";
 @import "functions";
 @import "mixins";
 @import "base";
 @import "type";
-
-// Elements
-@import "images";
-@import "tables";
-@import "code";
-@import "navigation";
-
-// Pages
-@import "article";
-@import "articles_list";
+@import "fonts";
