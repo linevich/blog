@@ -39,6 +39,7 @@
     list-style-type: none;
     display: inline-block;
     margin: 0;
+    float: left;
 
     &--active {
       background-color: transparentize($topNavActiveBg, 0.83);
