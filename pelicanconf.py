@@ -1,5 +1,11 @@
 from __future__ import unicode_literals
+
 import os
+import sys
+
+sys.path.append('.')
+
+from core import cc
 
 SITENAME = 'Блоґ Антона Ліневича'
 SITEURL = '/'
@@ -51,6 +57,8 @@ PLUGINS = [
     # Disabled until I find the solution: https://github.com/getpelican/pelican-plugins/issues/650
     # 'plugins.feed_summary',
     'plugins.simple_footnotes',
+    'core.cc',
+    'core.translations_extra'
 ]
 
 JINJA_ENVIRONMENT = {
@@ -71,7 +79,7 @@ OPEN_GRAPH_AUTHOR = {
 I18N_SUBSITES = {
     'en': {
         'SITENAME': 'Anton Linevych\'s blog',
-        'TWITTER_USERNAME': 'linevich_en',
+        'TWITTER_USERNAME': 'antonlinevych',
         'AUTHOR': 'Anton Linevych',
     },
     'uk': {
@@ -85,14 +93,18 @@ I18N_GETTEXT_LOCALEDIR = 'locales'
 I18N_GETTEXT_DOMAIN = 'messages'
 
 SHOW_ARTICLE_AUTHOR = False
-CC_LICENSE = 'cc-by'
+
+CC_LICENSE = cc.Attribution
 
 RELATED_POSTS_MAX = 5
-GOOGLE_ANALYTICS_UNIVERSAL = 'UA-43408213-3'
+
 DISPLAY_CATEGORIES_ON_MENU = True
 USE_OPEN_GRAPH = True
 OPEN_GRAPH_FB_APP_ID = 553505671478948
 DEFAULT_DATE_FORMAT = "%d/%m/%y"
+
+GOOGLE_ANALYTICS_UNIVERSAL = 'UA-43408213-3'
+GOOGLE_SITE_VERIFICATION = 'MCYojhllkhQDMPQHzPXIj1SgY7u8hFLMlQVy5L4nBbo'
 
 MINIFY = {
     'remove_comments': True,
@@ -118,63 +130,11 @@ LANGUAGES = {
 
 LANGUAGES_TRANSLATION_LINK_TEXT = {
     'uk': 'Переглянути Українську версію',
-    'en': 'View English version'
+    'en': 'View English version',
 }
-
-
-def full_language_name(lang_code):
-    return LANGUAGES[lang_code]
-
-
-def translation_link_text(lang_code):
-    """
-    Return translation link text.
-
-    Example:
-        View English version of the article.
-
-    :param lang_code: language code
-    """
-    if lang_code:
-        if lang_code in LANGUAGES_TRANSLATION_LINK_TEXT.keys():
-            return LANGUAGES_TRANSLATION_LINK_TEXT[lang_code]
-        else:
-            if lang_code in LANGUAGES.keys():
-                return 'View {} version'.format(LANGUAGES[lang_code])
-
 
 TWITTER_CARDS = True
-
-# Schema.org
-SCHEMA_TECH_ARTICLE = 'http://schema.org/TechArticle'
-SCHEMA_BLOG_POST = 'http://schema.org/BlogPosting'
-
-SCHEMA_DEFAULT_ARTICLE_SCOPE = SCHEMA_TECH_ARTICLE
-
-
-def schema_article_scope(article):
-    """
-    Returns ``itemptype`` value for article scope.
-
-    :param article: article object.
-    """
-    scope = getattr(article, 'scope', None)
-    if scope in ['post', 'blog-post', 'blog_post']:
-        return SCHEMA_BLOG_POST
-    elif scope:
-        return scope
-    else:
-        return SCHEMA_DEFAULT_ARTICLE_SCOPE
-
-
-JINJA_FILTERS = {
-    'full_language_name': full_language_name,
-    'translation_link_text': translation_link_text,
-    'schema_article_scope': schema_article_scope,
-}
 
 ORG_READER_EMACS_LOCATION = '/usr/bin/emacs'
 ORG_READER_EMACS_SETTINGS = os.path.abspath('lisp/config.el')
 ORG_READER_BACKEND = "'pelican-html"
-GOOGLE_SITE_VERIFICATION = 'MCYojhllkhQDMPQHzPXIj1SgY7u8hFLMlQVy5L4nBbo'
-ADDTHIS_BUTTONS_URL = '//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-569ee5e676ece814'
