@@ -1,0 +1,63 @@
+@import "core";
+@import "images";
+
+$articles-list-page-width: 1100px;
+$articles-list-width: 623px;
+
+.articlesListPage {
+  margin-top: 15px;
+  @include make-row($articles-list-page-width);
+
+  &:before, &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  &__title {
+    display: block;
+    font-weight: 400;
+    margin-top: 30px;
+  }
+
+  .articlesList {
+    @include column($width: 66.6666%, $gutter: 15px, $max-width: $articles-list-width);
+    @media (max-width: $small-screen-min) {
+      padding: 0 15px;
+    }
+
+    .articlePreview {
+      @extend %md-shadow-2;
+
+      background-color: #ffffff;
+      margin-bottom: 25px;
+
+      &__details {
+        padding: 0 15px 15px;
+      }
+      &__image {
+        margin: 0 0 10px 0;
+        vertical-align: top;
+      }
+      &__date {
+        color: $text-muted;
+        font-size: $small-font-size;
+      }
+      &__title {
+        margin-top: 5px;
+        display: inline-block;
+        width: 100%;
+        font-size: rem($h3-font-size);
+        font-weight: 400;
+      }
+    }
+  }
+
+  .sidebar {
+    @include column($articles-list-page-width - $articles-list-width - 50px);
+    @extend %hidden-xs;
+
+    // FIXME: Remove dev styles
+    background: #ffffff;
+  }
+}

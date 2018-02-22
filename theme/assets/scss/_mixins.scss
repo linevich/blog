@@ -9,6 +9,23 @@
   margin-right: calc(-100vw / 2 + #{$width} / 2);
 }
 
+@mixin column($width: 100%, $gutter: null, $max-width: null) {
+  position: relative;
+  float: left;
+  width: $width;
+  max-width: $max-width;
+  display: block;
+  padding-left: $gutter;
+  padding-right: $gutter;
+  min-height: 1px;
+}
+
+%hidden-xs {
+  @media (max-width: $small-screen-min) {
+    display: none;
+  }
+}
+
 %md-shadow-1 {
   box-shadow: $md-shadow-1;
 }
