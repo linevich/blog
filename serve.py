@@ -6,7 +6,7 @@ from livereload import Server
 BASE_DIR = os.path.dirname(os.path.realpath(__file__))
 
 STYLES_PATH = os.path.join(BASE_DIR, 'theme/assets/scss/')
-TEMPLATES_PATH = os.path.join(BASE_DIR, 'theme/templates/*')
+TEMPLATES_PATH = os.path.join(BASE_DIR, 'theme/templates/')
 ARTICLES_PATH = os.path.join(BASE_DIR, 'content/')
 BUILD_PATH = os.path.join(BASE_DIR, 'theme/static')
 OUTPUT = os.path.join(BASE_DIR, 'output/')
@@ -34,14 +34,20 @@ def build_scss():
 
 
 def build_pelican():
-    call_debug(['make', 'html'])
+    call_debug([
+        '/home/linevich/.virtualenvs/blog/bin/pelican',
+        '-D',
+        '/home/linevich/projects/blog/test_content',
+        '-o', '/home/linevich/projects/blog/output',
+        '-s', '/home/linevich/projects/blog/pelicanconf.py'
+    ])
 
 
 server.watch(STYLES_PATH, build_scss)
 server.watch(ARTICLES_PATH, build_pelican)
-server.watch(TEMPLATES_PATH, build_pelican)
+server.watch(os.path.join(TEMPLATES_PATH, '*'), build_pelican)
+server.watch(os.path.join(TEMPLATES_PATH, '**/*'), build_pelican)
 server.watch(os.path.join(BUILD_PATH, '/**'))
-# server.watch(os.path.join(OUTPUT, '*/*'))
 server.watch(os.path.join(OUTPUT, '/**.css'))
 
 server.serve(root='output/', open_url=True, debug=True)
