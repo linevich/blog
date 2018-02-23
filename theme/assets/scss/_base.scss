@@ -8,3 +8,35 @@ body {
   font-size: $base-font-size * 0.85;
   padding: 25px 0;
 }
+
+// == Visibility classes ==
+
+// Same principle as in Bootstrap 4
+// https://v4-alpha.getbootstrap.com/layout/responsive-utilities/#available-classes
+
+.is-hidden {
+  &--xs-up {
+    @include hidden-up($xs-screen-min);
+  }
+  &--xs-down {
+    @include hidden-down($xs-screen-min);
+  }
+  &--sm-up {
+    @include hidden-up($sm-screen-min);
+  }
+  &--sm-down {
+    @include hidden-down($sm-screen-min);
+  }
+  &--md-up {
+    @include hidden-up($md-screen-min);
+  }
+  &--md-down {
+    @include hidden-down($md-screen-min);
+  }
+  &--lg-up {
+    @include hidden-up($lg-screen-min);
+  }
+  &--lg-down {
+    @include hidden-down($lg-screen-min);
+  }
+}
