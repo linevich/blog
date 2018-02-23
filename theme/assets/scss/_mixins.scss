@@ -1,3 +1,5 @@
+// == Responsive utils
+
 @mixin make-row($size: 100%) {
   position: relative;
   margin: 0 auto;
@@ -20,11 +22,21 @@
   min-height: 1px;
 }
 
-%hidden-xs {
-  @media (max-width: $small-screen-min) {
-    display: none;
+// == Visibility utils ==
+
+@mixin hidden-up($width) {
+  @media (min-width: $width) {
+    display: none !important;
   }
 }
+
+@mixin hidden-down($width) {
+  @media (max-width: $width) {
+    display: none !important;
+  }
+}
+
+// == Material design ==
 
 %md-shadow-1 {
   box-shadow: $md-shadow-1;
@@ -46,10 +58,14 @@
   box-shadow: $md-shadow-4;
 }
 
+// == Images ==
+
 %responsive-img {
   display: inline-block;
   max-width: 100%;
 }
+
+// == Tables ==
 
 %table-cell {
   padding: rem($table-cell-padding);

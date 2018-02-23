@@ -1,12 +1,12 @@
-/*== Colors ==*/
+// == Colors ==
 
-$mainColor: #607d8b;
+$main-color: #607d8b;
 $body-bg: #eee;
 $black: #000000;
 
 $page-content-width: 760px;
 
-/* == Base font settings == */
+// == Base font settings == 
 $base-font-family: Roboto, Helvetica, Arial, sans-serif;
 $code-font-family: 'Roboto Mono', monospace;
 $base-font-size: 16px;
@@ -24,28 +24,41 @@ $h4-font-size: $h1-font-size * 0.55;
 $h5-font-size: $base-font-size;
 $h6-font-size: $base-font-size;
 
-/* == Code ==*/
+// == Code ==
 $code-font-size: $base-font-size * 0.9;
 $code-block-bg: #002b36;
 $code-block-padding: 25px;
 $code-color: #839496;
 
-/* == Top bar navigation == */
-$topNavFontSize: $small-font-size;
-$topNavHeight: 60px;
-$topNavVerticalPadding: ($topNavHeight - $topNavFontSize)/2;
-$topNavHorizontalPadding: 30px;
-$topNavMenuItemHorizontalPadding: 20px;
-$topNavColor: #ffffff;
-$topNavBg: $mainColor;
-$topNavActiveBg: #ffffff;
+// == Top bar navigation == 
+$top-nav-font-size: $small-font-size;
+$top-nav-height: 60px;
+$top-nav-vertical-padding: ($top-nav-height - $top-nav-font-size)/2;
+$top-nav-horizontal-padding: 30px;
+$top-nav-menu-item-horizontal-padding: 20px;
+$top-nav-color: #ffffff;
+$top-nav-bg: $main-color;
+$top-nav-active-bg: #ffffff;
 
-/*== Breakpoints ==*/
-$small-screen-min: 768px;
-$medium-screen-min: 992px;
-$large-screen-min: 1170px;
 
-/*== Material Shadows ==*/
+// == Breakpoints ==
+$xs-screen-min: 0;
+$sm-screen-min: 554px;
+$md-screen-min: 768px;
+$lg-screen-min: 992px;
+$xl-screen-min: 1200px;
+
+$breakpoints: (
+        xs : $xs-screen-min,
+        sm : $sm-screen-min,
+        md : $md-screen-min,
+        lg : $lg-screen-min,
+        xl : $xl-screen-min
+);
+
+$columns: 12;
+
+// == Material Shadows ==
 // Credit: https://codepen.io/sdthornton/pen/wBZdXq
 $md-shadow-1: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 $md-shadow-2: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
@@ -60,3 +73,7 @@ $table-border-color: #dee2e6;
 $table-cell-padding: 15px;
 
 $text-muted: #777;
+
+// == Articles list
+
+$articles-list-grid-width: 959px;

@@ -2,30 +2,30 @@
   @include make-row();
   @extend %md-shadow-2;
   line-height: 1;
-  padding: 0 $topNavHorizontalPadding;
-  height: rem($topNavHeight);
+  padding: 0 $top-nav-horizontal-padding;
+  height: rem($top-nav-height);
   font-family: $base-font-family;
-  font-size: rem($topNavFontSize);
-  background-color: $topNavBg;
-  color: $topNavColor;
+  font-size: rem($top-nav-font-size);
+  background-color: $top-nav-bg;
+  color: $top-nav-color;
   font-weight: $normal-font-weight;
 
   &__container {
-    @include make-row($large-screen-min);
+    @include make-row($lg-screen-min);
   }
   &__title {
     display: inline;
     float: left;
-    padding: rem($topNavVerticalPadding) $topNavHorizontalPadding rem($topNavVerticalPadding) 0;
+    padding: rem($top-nav-vertical-padding) $top-nav-horizontal-padding rem($top-nav-vertical-padding) 0;
     font-weight: 700;
-    color: $topNavColor;
+    color: $top-nav-color;
   }
   &__menu {
     display: inline;
     margin-top: 0;
     padding: 0;
 
-    @media (max-width: $small-screen-min) {
+    @media (max-width: $sm-screen-min) {
       display: none;
     }
 
@@ -43,17 +43,17 @@
     float: left;
 
     &--active {
-      background-color: transparentize($topNavActiveBg, 0.83);
+      background-color: transparentize($top-nav-active-bg, 0.83);
     }
     &:hover {
-      background-color: transparentize($topNavActiveBg, 0.90);
+      background-color: transparentize($top-nav-active-bg, 0.90);
     }
 
   }
   &__menuItemLink {
     text-decoration: none;
-    color: $topNavColor;
-    padding: rem($topNavVerticalPadding) $topNavMenuItemHorizontalPadding;
+    color: $top-nav-color;
+    padding: rem($top-nav-vertical-padding) $top-nav-menu-item-horizontal-padding;
     display: inline-block;
   }
 }

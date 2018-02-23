@@ -1,19 +1,19 @@
 html {
   font-family: $base-font-family;
 
-  @media (max-width: $small-screen-min) {
+  @media (max-width: $sm-screen-min) {
     font-size: 14px;
   }
-  @media (min-width: $small-screen-min) {
+  @media (min-width: $sm-screen-min) {
     font-size: 15px;
   }
-  @media (min-width: $medium-screen-min) {
+  @media (min-width: $md-screen-min) {
     font-size: $base-font-size;
   }
 }
 
 a {
-  color: $mainColor;
+  color: $main-color;
   text-decoration: none;
 }
 
