@@ -1,63 +1,76 @@
 @import "core";
 @import "images";
+@import "grid";
 
-$articles-list-page-width: 1100px;
-$articles-list-width: 623px;
-
-.articlesListPage {
-  margin-top: 15px;
-  @include make-row($articles-list-page-width);
-
-  &:before, &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-
+.articlesList {
   &__title {
     display: block;
     font-weight: 400;
-    margin-top: 30px;
+    font-size: $h2-font-size;
+    margin-top: 0;
   }
+  .articlePreview {
+    @extend %md-shadow-2;
 
-  .articlesList {
-    @include column($width: 66.6666%, $gutter: 15px, $max-width: $articles-list-width);
-    @media (max-width: $small-screen-min) {
-      padding: 0 15px;
+    background-color: #ffffff;
+    margin-bottom: 25px;
+
+    &__details {
+      padding: 0 15px 15px;
     }
-
-    .articlePreview {
-      @extend %md-shadow-2;
-
-      background-color: #ffffff;
-      margin-bottom: 25px;
-
-      &__details {
-        padding: 0 15px 15px;
-      }
-      &__image {
-        margin: 0 0 10px 0;
-        vertical-align: top;
-      }
-      &__date {
-        color: $text-muted;
-        font-size: $small-font-size;
-      }
-      &__title {
-        margin-top: 5px;
-        display: inline-block;
-        width: 100%;
-        font-size: rem($h3-font-size);
-        font-weight: 400;
-      }
+    &__image {
+      margin: 0 0 10px 0;
+      vertical-align: top;
+    }
+    &__date {
+      color: $text-muted;
+      font-size: $small-font-size;
+    }
+    &__title {
+      margin-top: 5px;
+      display: inline-block;
+      width: 100%;
+      font-size: rem($h3-font-size);
+      font-weight: 400;
     }
   }
+}
 
-  .sidebar {
-    @include column($articles-list-page-width - $articles-list-width - 50px);
-    @extend %hidden-xs;
+.sidebar {
+  padding-left: 30px;
 
-    // FIXME: Remove dev styles
-    background: #ffffff;
+  &__heading {
+    font-size: rem($small-font-size);
+    display: block;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: $text-muted;
+
+  }
+
+  .sidebarMenu {
+    margin: 0;
+    padding: 0;
+
+    &__item {
+      list-style-type: none;
+      display: block;
+    }
+
+    &__link {
+      padding: 20px 0 20px 20px;
+      width: 100%;
+      display: block;
+      font-size: $small-font-size;
+    }
+
+    &__link--active {
+      background-color: darken($body-bg, 3%);
+    }
+
+    &__link:hover {
+      background-color: darken($body-bg, 1%);
+    }
   }
 }

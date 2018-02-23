@@ -1,4 +1,14 @@
 <div class="sidebar">
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi eos error illum laboriosam praesentium quia vel!
-  Corporis dicta in iste molestias mollitia, nisi, obcaecati odio optio perspiciatis ratione similique ut?
+  <div class="sidebar__heading">topics</div>
+  <menu class="sidebarMenu">
+    <li class="sidebarMenu__item">
+      <a href="/{{ DEFAULT_LANG }}" class="sidebarMenu__link">{% trans %}All topics{% endtrans %}</a>
+    </li>
+    {% for topic, null in categories %}
+      <li class="sidebarMenu__item">
+        <a href="{{ SITEURL }}/{{ topic.url }}"
+           class="sidebarMenu__link {% if topic == category -%}sidebarMenu__link--active{%- endif %}">{{ topic }}</a>
+      </li>
+    {% endfor %}
+  </menu>
 </div>
