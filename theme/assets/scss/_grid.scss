@@ -1,0 +1,19 @@
+@import "../../node_modules/flexbox-grid-sass/src/flexbox-grid";
+
+.grid {
+  @include variant('articles-list') {
+    margin: 0 auto;
+    width: 100%;
+    max-width: $articles-list-grid-width;
+    @media (min-width: $sm-screen-min) {
+      margin-top: rem(60px);
+    }
+  }
+}
+
+.col {
+  @include variant('no-vert-gutter') {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}

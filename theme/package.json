@@ -5,7 +5,8 @@
   "license": "MIT",
   "author": "Anton Linevych",
   "devDependencies": {
-    "sass-material-colors": "^0.0.5",
-    "normalize-scss": "^7.0.1"
+    "flexbox-grid-sass": "https://github.com/linevych/flexbox-grid-sass/",
+    "normalize-scss": "^7.0.1",
+    "sass-material-colors": "^0.0.5"
   }
 }
