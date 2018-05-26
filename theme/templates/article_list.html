@@ -5,8 +5,16 @@
 {% block content %}
   <div class="grid grid--articles-list">
     <div class="row">
-    <div class="col col--sm-12 col--no-vert-gutter">{% block page_title %}{% endblock %}</div>
+      <div class="col col--sm-12 col--no-vert-gutter">{% block page_title %}{% endblock %}</div>
       <div class="col col--sm-8 col--no-vert-gutter">
+        {% if articles_page.has_previous() %}
+          <div class="pagination pagination--prev">
+            <a href="{{ SITEURL }}/{{ articles_next_page.url }}"
+               class="button button--primary button--raised button--small">
+              View newer posts
+            </a>
+          </div>
+        {% endif %}
         <div class="articlesList">
           {% for article in (articles_page.object_list if articles_page else articles) %}
             <div class="articlePreview">
@@ -22,6 +30,14 @@
             </div>
           {% endfor %}
         </div>
+        {% if articles_page.has_next() %}
+          <div class="pagination pagination--next">
+            <a href="{{ SITEURL }}/{{ articles_next_page.url }}"
+               class="button button--primary button--raised button--small">
+              View older posts
+            </a>
+          </div>
+        {% endif %}
       </div>
       <div class="col col--sm-4 col--no-vert-gutter is-hidden--sm-down">
         {% block sidebar %}

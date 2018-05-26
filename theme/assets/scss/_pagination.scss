@@ -1,0 +1,48 @@
+.pagination {
+  position: relative;
+  display: block;
+  max-width: 100%;
+  text-align: center;
+
+  &--prev {
+    margin-bottom: rem(25px);
+  }
+  &--next {
+    margin-top: rem(25px);
+  }
+}
+
+@mixin make-button-size($font-size) {
+  padding: rem($font-size) rem($font-size*1.25);
+  font-size: rem($font-size);
+}
+
+.button {
+  line-height: 1;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: $small-font-size $small-font-size*1.5;
+  border-radius: 2px;
+  display: inline-block;
+
+  &--raised {
+    @extend %md-shadow-1;
+  }
+
+  &--small {
+    @include make-button-size(12px);
+  }
+
+  &--medium {
+    @include make-button-size($small-font-size);
+  }
+
+  &--big {
+    @include make-button-size($base-font-size);
+  }
+
+  &--primary {
+    background-color: $main-color;
+    color: #ffffff;
+  }
+}

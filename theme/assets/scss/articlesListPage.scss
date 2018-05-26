@@ -1,6 +1,7 @@
 @import "core";
 @import "images";
 @import "grid";
+@import "pagination";
 
 .articlesList {
   &__title {
@@ -13,7 +14,10 @@
     @extend %md-shadow-2;
 
     background-color: #ffffff;
-    margin-bottom: 25px;
+
+    &:not(:last-child){
+      margin-bottom: rem(25px);
+    }
 
     &__details {
       padding: 0 15px 15px;

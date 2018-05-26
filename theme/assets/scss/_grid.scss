@@ -2,11 +2,14 @@
 
 .grid {
   @include variant('articles-list') {
-    margin: 0 auto;
+    margin: rem($top-nav-height) auto 0;
     width: 100%;
     max-width: $articles-list-grid-width;
     @media (min-width: $sm-screen-min) {
-      margin-top: rem(60px);
+      margin-top: rem($top-nav-height);
+    }
+    @media (max-width: $sm-screen-min) {
+      margin-top: rem($top-nav-height * 0.75);
     }
   }
 }
