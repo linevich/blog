@@ -1,0 +1,11 @@
+<div class="articlePreview {{ extra_classes }}">
+  {% if article.featured_image %}
+    <img src="{{ article.featured_image | thumbnail(POST_THUMBNAIL) }}"
+         alt="{{ article.title }}" class="articlePreview__image">
+  {% endif %}
+  <div class="articlePreview__details">
+    <time class="articlePreview__date"
+          datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }}</time>
+    <a class="articlePreview__title" href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+  </div>
+</div>

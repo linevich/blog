@@ -3,11 +3,11 @@
 }
 
 .article {
-  max-width: 760px;
+  max-width: $article-width;
   margin-left: auto;
   margin-right: auto;
 
-  padding: 25px;
+  padding: $article-padding;
   line-height: 1.75;
 
   &__topMeta {

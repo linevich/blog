@@ -40,7 +40,32 @@
       </footer>
     </article>
   </div>
+  <aside class="relatedArticles {% if article.related_posts|length < 4 %}relatedArticles--compact"{% endif %}>
+    <div class="grid grid--container">
+      <div class="row">
+        {% if article.related_posts|length == 2 %}
+          {% set col_lg = 6 %}
+          {% set col_md = 6 %}
+        {% elif article.related_posts|length % 3 == 0 %}
+          {% set col_lg = 4 %}
+          {% set col_md = 4 %}
+        {% else %}
+          {% set col_lg = 3 %}
+          {% set col_md = 6 %}
+        {% endif %}
+        {% for article in article.related_posts %}
+          <div class="col col--lg-{{ col_lg }} col--sm-flex col--xs-12 col--md-{{ col_md }}">
+            {% with extra_classes = "articlePreview--shadow-1 articlePreview--noBottomMargin" %}
+              {% include 'includes/article_preview.html' with context %}
+            {% endwith %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </aside>
   <aside class="afterArticle">
     <div id="commento" class="comments"></div>
   </aside>
+  {% if article.related_posts %}
+  {% endif %}
 {% endblock %}

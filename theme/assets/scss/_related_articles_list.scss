@@ -1,0 +1,9 @@
+.relatedArticles {
+  @include make-row($xl-screen-min);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  &--compact {
+    @include make-row($page-content-width);
+  }
+}

@@ -4,31 +4,49 @@
   @media (max-width: $sm-screen-min) {
     padding: 0 15px;
   }
+}
 
-  .articlePreview {
-    @extend %md-shadow-2;
+.articlePreview {
+  @extend %md-shadow-2;
+  position: relative;
+  display: inline-block;
+  background-color: #ffffff;
+  margin-bottom: rem(25px);
 
-    position: relative;
+  @media (max-width: $sm-screen-min) {
+    box-shadow: $md-shadow-1;
+    margin-bottom: 0;
+  }
+  &__details {
+    padding: 0 15px 15px;
+  }
+  &__image {
+    margin: 0 0 10px 0;
+    vertical-align: top;
+  }
+  &__date {
+    color: $text-muted;
+    font-size: $small-font-size;
+  }
+  &__title {
+    margin-top: 5px;
     display: inline-block;
-    background-color: #ffffff;
-    margin-bottom: 25px;
-    &__details {
-      padding: 0 15px 15px;
-    }
-    &__image {
-      margin: 0 0 10px 0;
-      vertical-align: top;
-    }
-    &__date {
-      color: $text-muted;
-      font-size: $small-font-size;
-    }
-    &__title {
-      margin-top: 5px;
-      display: inline-block;
-      width: 100%;
-      font-size: rem($h3-font-size);
-      font-weight: 400;
-    }
+    width: 100%;
+    font-size: rem($h3-font-size);
+    font-weight: 400;
+  }
+
+  &--shadow-1 {
+    @extend %md-shadow-1;
+  }
+  &--shadow-2 {
+    @extend %md-shadow-2;
+  }
+  &--shadow-3 {
+    @extend %md-shadow-3;
+  }
+
+  &--noBottomMargin {
+    margin-bottom: 0;
   }
 }
