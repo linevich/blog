@@ -5,8 +5,14 @@
   "license": "MIT",
   "author": "Anton Linevych",
   "devDependencies": {
+    "disqusLoader.js": "git+https://github.com/osvaldasvalutis/disqusLoader.js",
     "flexbox-grid-sass": "https://github.com/linevych/flexbox-grid-sass/",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.4",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4",
     "normalize-scss": "^7.0.1",
     "sass-material-colors": "^0.0.5"
-  }
+  },
+  "dependencies": {}
 }
